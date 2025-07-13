@@ -1,5 +1,4 @@
 <template>
-
   <header class="grid place-items-center pt-12">
     <div
       class="flex-wrap lg:flex space-y-14 mx-4 gap-60 justify-between items-center"
@@ -27,13 +26,53 @@
           <Button class="bg-[#ff4b57] cursor-pointer">Let's Talk</Button>
         </div>
       </div>
-      <div data-aos="fade-left" data-aos-anchor-placement="top-center">
+      <div
+        data-aos="fade-left"
+        data-aos-anchor-placement="top-center"
+        class="relative w-80 h-80 mx-auto"
+      >
         <img
           src="/public/images/profile.jpg"
           alt="Hero Image"
           class="size-50 rounded-full object-cover ring-4 ring-[#ff4b57] drop-shadow-[0_0_20px_#ff4b57] flex mx-auto item-center"
           sizes="sm:100vw md:50vw lg:400px"
         />
+
+        <!-- Top Icon -->
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
+        >
+          <Icon name="ant-design:github-filled" class="text-[#ff4b57] size-8" />
+        </div>
+
+        <!-- Right Icon -->
+        <div
+          class="absolute right-20 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
+        >
+          <Icon
+            name="ant-design:linkedin-filled"
+            class="text-[#ff4b57] size-8"
+          />
+        </div>
+
+        <!-- Bottom Icon -->
+        <div
+          class="absolute bottom-30 left-1/2 -translate-x-1/2 translate-y-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
+        >
+          <Icon
+            name="ant-design:instagram-filled"
+            class="text-[#ff4b57] size-8"
+          />
+        </div>
+        <!-- Left Icon -->
+        <div
+          class="absolute left-20 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
+        >
+          <Icon
+            name="prime:twitter"
+            class="text-[#ff4b57] size-8"
+          />
+        </div>
       </div>
     </div>
   </header>

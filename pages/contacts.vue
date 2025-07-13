@@ -1,17 +1,19 @@
 <template>
-    <header class="pt-10 text-center">
-        <h1 class="text-xl text-gray-300 font-semibold">Let's Get In-touch</h1>
-    </header>
-  <main class="grid-cols-2 lg:grid gap-4 pt-8 mx-10 justify-center items-center">
+  <header class="pt-10 text-center">
+    <h1 class="text-xl text-gray-300 font-semibold">Let's Get In-touch</h1>
+  </header>
+  <main
+    class="grid-cols-2 lg:grid gap-4 pt-8 mx-10 justify-center items-center"
+  >
     <div
       data-aos="fade-up-right"
       data-aos-anchor-placement="top-center"
       class="bg-[#ff4b57] p-6 rounded-lg w-full mx-2"
     >
-      <h2 class="text-lg font-semibold text-gray-300">
-        Contact information
-      </h2>
-      <p class="pb-4 text-gray-300 text-sm">Reach out on me and lets have a chat.</p>
+      <h2 class="text-lg font-semibold text-gray-300">Contact information</h2>
+      <p class="pb-4 text-gray-300 text-sm">
+        Reach out on me and lets have a chat.
+      </p>
 
       <div class="flex items-center mb-4">
         <Icon
@@ -20,8 +22,18 @@
           size="32"
         />
         <div>
-          <p class="text-sm text-gray-300 font-semibold">+254 792 857 288</p>
-          <p class="text-sm text-gray-300 font-semibold">+254 759 732 432</p>
+          <a
+            href="tel:+254792857288"
+            class="text-sm text-gray-300 font-semibold"
+            >+254 792 857 288</a
+          >
+          <p>
+            <a
+              href="tel:+254759732432"
+              class="text-sm text-gray-300 font-semibold"
+              >+254 759 732 432</a
+            >
+          </p>
         </div>
       </div>
       <div class="flex items-center mb-4">
@@ -31,12 +43,16 @@
           size="32"
         />
         <div>
-          <p class="text-sm text-gray-300 font-semibold">
-            paulnyamawi18@gmail.com
-          </p>
-          <p class="text-sm text-gray-300 font-semibold">
-            poltechnology01@gmail.com
-          </p>
+          <a href="mailto:paulnyamawi18@gmail.com">
+            <p class="text-sm text-gray-300 font-semibold">
+              paulnyamawi18@gmail.com
+            </p>
+          </a>
+          <a href="mailto:poltechnology01@gmail.com">
+            <p class="text-sm text-gray-300 font-semibold">
+              poltechnology01@gmail.com
+            </p>
+          </a>
         </div>
       </div>
 
@@ -114,8 +130,7 @@
         </div>
       </form>
     </div>
-</main>
+  </main>
 </template>
 
 <script setup></script>
-

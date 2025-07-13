@@ -1,13 +1,15 @@
 <template>
-  <main class="flex gap-4 pt-10 mx-10 justify-center items-center m-auto">
+  <main class="grid-cols-2 lg:grid gap-4 pt-10 mx-10 justify-center items-center">
     <div
       data-aos="fade-up-right"
       data-aos-anchor-placement="top-center"
       class="bg-[#ff4b57] p-6 rounded-lg w-full mx-2"
     >
-      <h2 class="text-lg font-semibold mb-4 text-gray-300">
+      <h2 class="text-lg font-semibold text-gray-300">
         Contact information
       </h2>
+      <p class="pb-4 text-gray-300 text-sm">Reach out on me and lets have a chat.</p>
+
       <div class="flex items-center mb-4">
         <Icon
           name="line-md:phone-filled"

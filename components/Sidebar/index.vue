@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#192030] top-0 z-50">
+  <div class="bg-[#192030] top-0 z-50 sticky">
     <div
       class="flex lg:hidden z-50 items-center justify-between p-4 w-full h-full"
     >

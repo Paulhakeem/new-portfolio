@@ -27,7 +27,7 @@
 const menu = [
   { name: 'Home', path: '/' },
   { name: 'Project', path: '/projects' },
-  { name: 'Skils', path: '/skils' },
-  { name: 'Contact', path: '/contact' }
+  { name: 'Graphics', path: '/graphics' },
+  { name: 'Contact', path: '/contacts' }
 ];
 </script>

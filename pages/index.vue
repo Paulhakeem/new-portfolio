@@ -1,11 +1,11 @@
 <template>
-  <header class="grid place-items-center pt-12">
+  <header class="grid pt-12 mx-4">
     <div
-      class="flex-wrap lg:flex space-y-14 mx-4 gap-60 justify-between items-center"
+      class="flex flex-wrap gap-10 justify-center items-center m-auto pt-6"
     >
       <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
         <h1 class="text-3xl font-bold text-[#dcdee8]">
-          Hi!, I'm Paul👋,<br />
+          Hi!👋, I'm Paul,<br />
           <span class="text-[#ff4b57]">I learn, I Develop..</span>
         </h1>
         <h6 class="mt-2 text-gray-300 text-lg font-semibold">

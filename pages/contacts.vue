@@ -1,5 +1,8 @@
 <template>
-  <main class="grid-cols-2 lg:grid gap-4 pt-10 mx-10 justify-center items-center">
+    <header class="pt-10 text-center">
+        <h1 class="text-xl text-gray-300 font-semibold">Let's Get In-touch</h1>
+    </header>
+  <main class="grid-cols-2 lg:grid gap-4 pt-8 mx-10 justify-center items-center">
     <div
       data-aos="fade-up-right"
       data-aos-anchor-placement="top-center"
@@ -116,4 +119,3 @@
 
 <script setup></script>
 
-<style lang="scss" scoped></style>

@@ -3,7 +3,7 @@
     <h2 class="text-2xl text-[#ff4b57] font-light">Tech stack/tools:</h2>
 
     <div
-      class="mt-4 border border-[#ff4b57] w-full p-5 flex flex-wrap gap-4"
+      class="mt-4 bg-[#2b2e41]  w-full p-5 flex flex-wrap gap-4"
     >
       <div
         v-for="(skills, index) in techSkils"

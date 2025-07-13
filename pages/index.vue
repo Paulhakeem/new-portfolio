@@ -1,11 +1,12 @@
 <template>
+
   <header class="grid place-items-center pt-12">
     <div
-      class="flex flex-wrap space-y-14 mx-4 gap-60 justify-between items-center"
+      class="flex-wrap lg:flex space-y-14 mx-4 gap-60 justify-between items-center"
     >
       <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
         <h1 class="text-3xl font-bold text-[#dcdee8]">
-          Hello!👋,<br />
+          Hi!, I'm Paul👋,<br />
           <span class="text-[#ff4b57]">I learn, I Develop..</span>
         </h1>
         <h6 class="mt-2 text-gray-300 text-lg font-semibold">
@@ -28,7 +29,7 @@
       </div>
       <div data-aos="fade-left" data-aos-anchor-placement="top-center">
         <img
-          src="/assets/images/profile.jpg"
+          src="/public/images/profile.jpg"
           alt="Hero Image"
           class="size-50 rounded-full object-cover ring-4 ring-[#ff4b57] drop-shadow-[0_0_20px_#ff4b57] flex mx-auto item-center"
           sizes="sm:100vw md:50vw lg:400px"
@@ -36,6 +37,11 @@
       </div>
     </div>
   </header>
+  <main>
+    <div class="m-auto max-w-3xl px-4">
+      <Skills />
+    </div>
+  </main>
 </template>
 
 <script setup>

@@ -3,12 +3,12 @@
     <h1 class="text-xl text-gray-300 font-semibold">Let's Get In-touch</h1>
   </header>
   <main
-    class="grid-cols-2 lg:grid gap-4 pt-8 mx-10 justify-center items-center"
+    class="grid-cols-2 lg:grid pt-8 mx-10 justify-center place-items-center"
   >
     <div
       data-aos="fade-up-right"
       data-aos-anchor-placement="top-center"
-      class="bg-[#ff4b57] p-6 rounded-lg w-full mx-2"
+      class="bg-[#ff4b57] p-6 rounded-lg w-96"
     >
       <h2 class="text-lg font-semibold text-gray-300">Contact information</h2>
       <p class="pb-4 text-gray-300 text-sm">
@@ -71,7 +71,7 @@
     <div
       data-aos="fade-up-left"
       data-aos-anchor-placement="top-center"
-      class="p-6 w-full"
+      class="p-6"
     >
       <form>
         <div class="flex gap-10 w-full">

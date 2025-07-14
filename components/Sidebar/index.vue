@@ -18,7 +18,7 @@
         class="fixed top-0 left-0 w-full h-screen z-[999]"
       >
         <Icon
-          class="absolute top-4 right-4 cursor-pointer text-gray-300 justify-start"
+          class="absolute top-0 right-4 cursor-pointer text-gray-300 justify-start"
           size="30"
           name="material-symbols:close"
           @click="openCloseSidebar"

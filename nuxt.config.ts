@@ -19,5 +19,15 @@ export default defineNuxtConfig({
      * @default "./components/ui"
      */
     componentDir: './components/ui'
-  }
+  },
+  runtimeConfig: {
+    // Private variables (only available on server side)
+    emailUser: process.env.EMAIL_USER,
+    emailPass: process.env.APP_PASSWORD,
+
+    // Public variables (can be accessed in client-side too)
+    public: {
+      apiBaseUrl: process.env.SMTP_HOST,
+    },
+  },
 })

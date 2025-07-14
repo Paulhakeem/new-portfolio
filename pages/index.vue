@@ -1,8 +1,6 @@
 <template>
   <header class="grid pt-12 mx-4">
-    <div
-      class="flex flex-wrap gap-10 justify-center items-center m-auto pt-6"
-    >
+    <div class="flex flex-wrap gap-10 justify-center items-center m-auto pt-6">
       <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
         <h1 class="text-3xl font-bold text-[#dcdee8]">
           Hi!👋, I'm Paul,<br />
@@ -39,23 +37,40 @@
         />
 
         <!-- Top Icon -->
-        <div
-          class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
+        <a
+          href="https://github.com/Paulhakeem?tab=overview&from=2025-07-01&to=2025-07-14"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <Icon name="ant-design:github-filled" class="text-[#ff4b57] size-8" />
-        </div>
-
+          <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
+          >
+            <Icon
+              name="ant-design:github-filled"
+              class="text-[#ff4b57] size-8"
+            />
+          </div>
+        </a>
         <!-- Right Icon -->
-        <div
-          class="absolute right-20 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
+        <a
+          href="https://www.linkedin.com/in/paul-nyamawi-9244b924b/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <Icon
-            name="ant-design:linkedin-filled"
-            class="text-[#ff4b57] size-8"
-          />
-        </div>
-
+          <div
+            class="absolute right-20 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
+          >
+            <Icon
+              name="ant-design:linkedin-filled"
+              class="text-[#ff4b57] size-8"
+            />
+          </div>
+        </a>
         <!-- Bottom Icon -->
+         <a
+          href="https://www.instagram.com/coderpaul18/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer">
         <div
           class="absolute bottom-30 left-1/2 -translate-x-1/2 translate-y-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
         >
@@ -64,15 +79,19 @@
             class="text-[#ff4b57] size-8"
           />
         </div>
+        </a>
         <!-- Left Icon -->
-        <div
-          class="absolute left-20 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
+        <a
+          href="https://x.com/Hakeemi20"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <Icon
-            name="prime:twitter"
-            class="text-[#ff4b57] size-8"
-          />
-        </div>
+          <div
+            class="absolute left-20 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
+          >
+            <Icon name="prime:twitter" class="text-[#ff4b57] size-8" />
+          </div>
+        </a>
       </div>
     </div>
   </header>

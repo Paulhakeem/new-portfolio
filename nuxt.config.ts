@@ -26,8 +26,8 @@ export default defineNuxtConfig({
     emailPass: process.env.APP_PASSWORD,
 
     // Public variables (can be accessed in client-side too)
-    public: {
-      apiBaseUrl: process.env.SMTP_HOST,
-    },
+    // public: {
+    //   apiBaseUrl: process.env.SMTP_HOST,
+    // },
   },
 })

@@ -73,7 +73,7 @@
       data-aos-anchor-placement="top-center"
       class="p-6"
     >
-      <form>
+      <form @submit.prevent="send">
         <div class="flex gap-10 w-full">
           <div class="mb-4">
             <label for="name" class="block text-sm font-medium text-gray-300"
@@ -82,6 +82,7 @@
             <input
               type="text"
               id="name"
+              v-model="form.name"
               class="text-gray-400 mt-1 block w-full p-2 border-0 border-b-2 border-b-gray-300 focus:border-b-[#ff4b57] focus:ring-0 focus:outline-none transition duration-200"
               placeholder="Your Name"
               required
@@ -94,6 +95,7 @@
             <input
               type="email"
               id="email"
+              v-model="form.to"
               class="text-gray-400 mt-1 block w-full p-2 border-0 border-b-2 border-b-gray-300 focus:border-b-[#ff4b57] focus:ring-0 focus:outline-none transition duration-200"
               placeholder="Your Email"
               required
@@ -107,6 +109,7 @@
           <input
             type="text"
             id="message"
+            v-model="form.subject"
             class="w-full mt-2 p-2 text-sm text-gray-400 placeholder-gray-400 border-0 border-b-2 border-b-gray-300 focus:border-b-[#ff4b57] focus:ring-0 focus:outline-none transition duration-200"
             placeholder="Your subject"
             required
@@ -119,6 +122,7 @@
           >
           <textarea
             id="message"
+            v-model="form.text"
             class="w-full mt-2 p-2 text-sm text-gray-400 placeholder-gray-400 border-0 border-b-2 border-b-gray-300 focus:border-b-[#ff4b57] focus:ring-0 focus:outline-none transition duration-200"
             placeholder="Your Message"
             required
@@ -133,4 +137,26 @@
   </main>
 </template>
 
-<script setup></script>
+<script setup>
+const { showSuccess, showError } = useAlert();
+const form = reactive({
+  name: "",
+  to: "",
+  subject: "",
+  text: "",
+});
+
+const send = async () => {
+  const res = await $fetch("/api/email", {
+    method: "POST",
+    body: form,
+  });
+
+  if (res.success) {
+    showSuccess("Email sent!");
+  } else {
+    showError("Email sent!");
+    console.log("Failed: " + res.error);
+  }
+};
+</script>

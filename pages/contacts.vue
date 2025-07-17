@@ -130,7 +130,7 @@
         </div>
 
         <div class="mt-6">
-          <Button class="bg-[#ff4b57] cursor-pointer">Send Message</Button>
+          <Button :disabled="loading" class="bg-[#ff4b57] cursor-pointer">{{ loading ? 'Sending...' : 'Send Message' }}</Button>
         </div>
       </form>
     </div>
@@ -139,6 +139,7 @@
 
 <script setup>
 const { showSuccess, showError } = useAlert();
+const loading = ref(false)
 const form = reactive({
   name: "",
   to: "",
@@ -147,16 +148,25 @@ const form = reactive({
 });
 
 const send = async () => {
-  const res = await $fetch("/api/email", {
-    method: "POST",
-    body: form,
-  });
-
-  if (res.success) {
-    showSuccess("Email sent!");
-  } else {
-    showError("Email sent!");
-    console.log("Failed: " + res.error);
+  loading.value = true;
+  try {
+    const response = await $fetch("/api/email", {
+      method: "POST",
+      body: form,
+    });
+    if (response.success) {
+      showSuccess("Message sent successfully!");
+      form.name = "";
+      form.to = "";
+      form.subject = "";
+      form.text = "";
+    } else {
+      showError("Failed to send message. Please try again.");
+    }
+  } catch (error) {
+    showError("An error occurred while sending the message.");
+  } finally {
+    loading.value = false;
   }
 };
 </script>

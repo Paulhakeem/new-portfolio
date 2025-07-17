@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     // Private variables (only available on server side)
-    emailUser: process.env.EMAIL_USER,
+    emailUser: process.env.EMAIL_USERNAME,
     emailPass: process.env.APP_PASSWORD,
 
     // Public variables (can be accessed in client-side too)

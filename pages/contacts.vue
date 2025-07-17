@@ -150,7 +150,7 @@ const form = reactive({
 const send = async () => {
   loading.value = true;
   try {
-    const response = await $fetch("/api/email", {
+    const response = await $fetch("/api/send-email", {
       method: "POST",
       body: form,
     });

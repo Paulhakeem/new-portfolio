@@ -95,7 +95,7 @@
             <input
               type="email"
               id="email"
-              v-model="form.to"
+              v-model="form.email"
               class="text-gray-400 mt-1 block w-full p-2 border-0 border-b-2 border-b-gray-300 focus:border-b-[#ff4b57] focus:ring-0 focus:outline-none transition duration-200"
               placeholder="Your Email"
               required
@@ -142,7 +142,7 @@ const { showSuccess, showError } = useAlert();
 const loading = ref(false)
 const form = reactive({
   name: "",
-  to: "",
+  email: "",
   subject: "",
   text: "",
 });
@@ -157,7 +157,7 @@ const send = async () => {
     if (response.success) {
       showSuccess("Message sent successfully!");
       form.name = "";
-      form.to = "";
+      form.email = "";
       form.subject = "";
       form.text = "";
     } else {

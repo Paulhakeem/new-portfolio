@@ -4,10 +4,10 @@ export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
   const body = await readBody(event);
 
-  const { to, subject, text, name } = body;
+  const { email, subject, text, name } = body;
 
   // Validate required fields
-  if (!to || !subject || !text || !name) {
+  if (!email || !subject || !text || !name) {
     throw createError({
       statusCode: 400,
       statusMessage: "Missing required fields: to, subject, or text",
@@ -24,10 +24,14 @@ export default defineEventHandler(async (event) => {
   });
 
   const mailOptions = {
-    from: config.public.emailUser,
-    to,
+    from: `<${email}>`,
+    to: config.public.EMAIL_USERNAME, // Use the configured email address
     subject,
-    text: `From: ${name}\n\n${text}`,
+    text: `
+Name: ${name}
+Email: ${email}
+${text}
+  `,
   };
 
   try {

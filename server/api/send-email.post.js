@@ -4,10 +4,10 @@ export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
   const body = await readBody(event);
 
-  const { email, subject, text, name } = body;
+  const { to, subject, text, name } = body;
 
   // Validate required fields
-  if (!email || !subject || !text || !name) {
+  if (!to || !subject || !text || !name) {
     throw createError({
       statusCode: 400,
       statusMessage: "Missing required fields: to, subject, or text",
@@ -24,18 +24,25 @@ export default defineEventHandler(async (event) => {
   });
 
   const mailOptions = {
-    from: `<${email}>`,
+    from: to,
     to: config.public.EMAIL_USERNAME, // Use the configured email address
     subject,
-    text: `
-Name: ${name}
-Email: ${email}
-${text}
-  `,
+    text: `From: ${name} <${to}>\n\n${text}`,
+  };
+
+  const confirmationMail = {
+    from: config.emailUser,
+    to: to,
+    subject: "Thanks for contacting me!",
+    text: `Hi ${name},\n\nThanks for reaching out! I've received your message and will get back to you shortly.\n\nBest regards,\nPaul`,
   };
 
   try {
+    // Send the email
     const info = await transporter.sendMail(mailOptions);
+    // Send confirmation to user
+    await transporter.sendMail(confirmationMail);
+
     return { success: true, info };
   } catch (error) {
     console.error("SendMail error:", error);

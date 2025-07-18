@@ -88,6 +88,20 @@
           </Button>
             </a>
         </div>
+          <div class="bg-[#2b2e41] w-72 h-auto p-2 rounded-md">
+          <div class="flex justify-center items-center mt-2">
+            <img src="/public/images/My holiday deals.png" alt="AI Icon" class="" />
+          </div>
+          <div class="pt-4">
+            <p class="text-md text-[#ff4b57] font-semibold">Bnb</p>
+          </div>
+          <a href="https://my-holiday-deals.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <Button class="mt-4 bg-gray-300 text-gray-700 cursor-pointer my-2"
+            >Visit
+            <Icon class="ml-2" name="ri:external-link-line" size="16" />
+          </Button>
+            </a>
+        </div>
       </div>
     </div>
   </section>

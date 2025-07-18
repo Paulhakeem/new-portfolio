@@ -8,7 +8,7 @@
     <div
       data-aos="fade-up-right"
       data-aos-anchor-placement="top-center"
-      class="bg-[#ff4b57] p-6 rounded-lg w-80"
+      class="bg-[#ff4b57] p-6 rounded-lg w-80 dark:text-gray-300"
     >
       <h2 class="text-lg font-semibold text-gray-300">Contact information</h2>
       <p class="pb-4 text-gray-300 text-sm">

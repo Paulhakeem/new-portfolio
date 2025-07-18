@@ -75,5 +75,9 @@ const techSkils = ref([
     icon: "devicon:mongodb",
     name: "MongoDB",
   },
+  {
+    icon: "devicon:firebase",
+    name: "Firebase",
+  },
 ]);
 </script>

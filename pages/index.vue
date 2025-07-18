@@ -1,6 +1,6 @@
 <template>
   <header class="grid pt-12 mx-4">
-    <div class="flex flex-wrap gap-10 justify-center items-center m-auto pt-6">
+    <div class="flex flex-wrap gap-10 justify-center items-center m-auto">
       <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
         <h1 class="text-3xl font-bold text-[#dcdee8]">
           Hi!👋, I'm Paul,<br />
@@ -13,7 +13,9 @@
           I am a Graphic Designer and Front-End Developer with a passion for
           creating visually appealing and user-friendly digital experiences. My
           journey in design and development has equipped me with the skills to
-          bring ideas to life through innovative solutions.
+          bring ideas to life through innovative solutions. I specialize in
+          Vue.js and Nuxt.js, and I'm always eager to learn new technologies to
+          enhance my skills.
         </p>
 
         <span class="italic text-[#ff4b57] text-sm"
@@ -21,7 +23,12 @@
         >
 
         <div class="mt-6">
-          <Button class="bg-[#ff4b57] cursor-pointer">Let's Talk</Button>
+          <a href="/PAUL.pdf" download="Paul_Nyamawi_CV.pdf">
+            <Button class="bg-[#ff4b57] cursor-pointer">
+              <Icon name="line-md:download-loop" size="20" />
+              Check-out My CV</Button
+            >
+          </a>
         </div>
       </div>
       <div
@@ -67,18 +74,19 @@
           </div>
         </a>
         <!-- Bottom Icon -->
-         <a
+        <a
           href="https://www.instagram.com/coderpaul18/?hl=en"
           target="_blank"
-          rel="noopener noreferrer">
-        <div
-          class="absolute bottom-30 left-1/2 -translate-x-1/2 translate-y-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
+          rel="noopener noreferrer"
         >
-          <Icon
-            name="ant-design:instagram-filled"
-            class="text-[#ff4b57] size-8"
-          />
-        </div>
+          <div
+            class="absolute bottom-30 left-1/2 -translate-x-1/2 translate-y-1/2 bg-white p-1.5 size-9 place-items-center flex items-center rounded-full"
+          >
+            <Icon
+              name="ant-design:instagram-filled"
+              class="text-[#ff4b57] size-8"
+            />
+          </div>
         </a>
         <!-- Left Icon -->
         <a

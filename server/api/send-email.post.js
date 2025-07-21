@@ -34,7 +34,15 @@ export default defineEventHandler(async (event) => {
     from: config.emailUser,
     to: to,
     subject: "Thanks for contacting me!",
-    text: `Hi ${name},\n\nThanks for reaching out! I've received your message and will get back to you shortly.\n\nBest regards,\nPaul`,
+    html: `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+      <h2 style="color: #ff4b57;">Hi ${name},</h2>
+      <p>Thank you for reaching out to me! 🙌</p>
+      <p>I've received your message and will get back to you shortly.</p>
+      <br />
+      <p style="color: #888;">Best regards,<br/>Paul Nyamawi</p>
+    </div>
+  `,
   };
 
   try {

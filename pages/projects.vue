@@ -10,96 +10,23 @@
         </p>
       </div>
       <!-- Add your project content here -->
-
-      <div
-        class="flex flex-wrap gap-10 justify-center items-center m-auto pt-6"
-      >
-        <div class="bg-[#2b2e41] w-72 h-auto p-2 rounded-md">
-          <div class="flex justify-center items-center mt-2">
-            <img src="/public/images/1.png" alt="AI Icon" class="" />
-          </div>
-          <div class="pt-4">
-            <p class="text-md text-[#ff4b57] font-semibold">
-              AI-car-Landing Page
-            </p>
-          </div>
-          <a href="https://ai-car-six.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <Button class="mt-4 bg-gray-300 text-gray-700 cursor-pointer my-2"
-            >Visit
-            <Icon class="ml-2" name="ri:external-link-line" size="16" />
-          </Button>
-          </a>
-        </div>
-        <div class="bg-[#2b2e41] w-72 h-auto p-2 rounded-md">
-          <div class="flex justify-center items-center mt-2">
-            <img src="/public/images/2.png" alt="AI Icon" class="" />
-          </div>
-          <div class="pt-4">
-            <p class="text-md text-[#ff4b57] font-semibold">
-              Car Rental Landing Page
-            </p>
-          </div>
-          <a href="https://dolph-seven.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <Button class="mt-4 bg-gray-300 text-gray-700 cursor-pointer my-2"
-            >Visit
-            <Icon class="ml-2" name="ri:external-link-line" size="16" />
-          </Button>
-          </a>
-        </div>
-        <div class="bg-[#2b2e41] w-72 h-auto p-2 rounded-md">
-          <div class="flex justify-center items-center mt-2">
-            <img src="/public/images/3.png" alt="AI Icon" class="" />
-          </div>
-          <div class="pt-4">
-            <p class="text-md text-[#ff4b57] font-semibold">Online Store</p>
-          </div>
-          <a href="https://medusa-sooty-nine.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <Button class="mt-4 bg-gray-300 text-gray-700 cursor-pointer my-2"
-            >Visit
-            <Icon class="ml-2" name="ri:external-link-line" size="16" />
-          </Button>
-          </a>
-        </div>
-        <div class="bg-[#2b2e41] w-72 h-auto p-2 rounded-md">
-          <div class="flex justify-center items-center mt-2">
-            <img src="/public/images/5.png" alt="AI Icon" class="" />
-          </div>
-          <div class="pt-4">
-            <p class="text-md text-[#ff4b57] font-semibold">Darshboard</p>
-          </div>
-          <a href="https://dashboard-sooty-zeta-83.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <Button class="mt-4 bg-gray-300 text-gray-700 cursor-pointer my-2"
-            >Visit
-            <Icon class="ml-2" name="ri:external-link-line" size="16" />
-          </Button>
-            </a>
-        </div>
-          <div class="bg-[#2b2e41] w-72 h-auto p-2 rounded-md">
-          <div class="flex justify-center items-center mt-2">
-            <img src="/public/images/4.png" alt="AI Icon" class="" />
-          </div>
-          <div class="pt-4">
-            <p class="text-md text-[#ff4b57] font-semibold">Darshboard</p>
-          </div>
-          <a href="https://dashboard-sooty-zeta-83.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <Button class="mt-4 bg-gray-300 text-gray-700 cursor-pointer my-2"
-            >Visit
-            <Icon class="ml-2" name="ri:external-link-line" size="16" />
-          </Button>
-            </a>
-        </div>
-          <div class="bg-[#2b2e41] w-72 h-auto p-2 rounded-md">
-          <div class="flex justify-center items-center mt-2">
-            <img src="/public/images/My holiday deals.png" alt="AI Icon" class="" />
-          </div>
-          <div class="pt-4">
-            <p class="text-md text-[#ff4b57] font-semibold">Bnb</p>
-          </div>
-          <a href="https://my-holiday-deals.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <Button class="mt-4 bg-gray-300 text-gray-700 cursor-pointer my-2"
-            >Visit
-            <Icon class="ml-2" name="ri:external-link-line" size="16" />
-          </Button>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pt-6">
+        <div v-for="(image, index) in images" :key="index"
+          class="bg-[#2b2e41] w-72 h-auto p-4 rounded-md m-auto"
+        >
+            <div class="flex justify-center items-center mt-2">
+              <img :src="image.src" alt="AI Icon" class="" />
+            </div>
+            <div class="pt-4">
+              <p class="text-md text-[#ff4b57] font-semibold">
+                {{ image.title }}
+              </p>
+            </div>
+            <a :href="image.link" target="_blank">
+              <Button class="mt-4 bg-gray-300 text-gray-700 cursor-pointer my-2"
+                >Visit
+                <Icon class="ml-2" name="ri:external-link-line" size="16" />
+              </Button>
             </a>
         </div>
       </div>
@@ -107,6 +34,49 @@
   </section>
 </template>
 
-<script setup></script>
-
-<style lang="scss" scoped></style>
+<script setup>
+const images = ref([
+  {
+    title: "AI-car-Landing Page",
+    src: "/images/1.png",
+    alt: "AI",
+    link: "https://ai-car-six.vercel.app/",
+  },
+  {
+    title: "Car Rental Landing Page",
+    src: "/images/2.png",
+    alt: "Car Rental",
+    link: "https://car-rental-landing-page.vercel.app/",
+  },
+  {
+    title: "Online Store",
+    src: "/images/3.png",
+    alt: "Online Store",
+    link: "https://online-store-landing-page.vercel.app/",
+  },
+  {
+    title: "Dashboard",
+    src: "/images/5.png",
+    alt: "Dashboard",
+    link: "https://dashboard-landing-page.vercel.app/",
+  },
+  {
+    title: "Movie app",
+    src: "/images/4.png",
+    alt: "Movie app",
+    link: "https://movie-app-landing-page.vercel.app/",
+  },
+  {
+    title: "BnB",
+    src: "/images/My holiday deals.png",
+    alt: "BnB",
+    link: "https://my-holiday-deals.vercel.app/",
+  },
+  {
+    title: "Weather app",
+    src: "/images/6.png",
+    alt: "Weather app",
+    link: "https://weather-app-landing-page.vercel.app/",
+  },
+]);
+</script>

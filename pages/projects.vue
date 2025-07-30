@@ -46,25 +46,25 @@ const images = ref([
     title: "Car Rental Landing Page",
     src: "/images/2.png",
     alt: "Car Rental",
-    link: "https://car-rental-landing-page.vercel.app/",
+    link: "https://dolph-seven.vercel.app/",
   },
   {
     title: "Online Store",
     src: "/images/3.png",
     alt: "Online Store",
-    link: "https://online-store-landing-page.vercel.app/",
+    link: "https://medusa-sooty-nine.vercel.app/",
   },
   {
     title: "Dashboard",
     src: "/images/5.png",
     alt: "Dashboard",
-    link: "https://dashboard-landing-page.vercel.app/",
+    link: "https://dashboard-sooty-zeta-83.vercel.app/",
   },
   {
     title: "Movie app",
     src: "/images/4.png",
     alt: "Movie app",
-    link: "https://movie-app-landing-page.vercel.app/",
+    link: "https://pre-movies.vercel.app/",
   },
   {
     title: "BnB",
@@ -76,7 +76,7 @@ const images = ref([
     title: "Weather app",
     src: "/images/6.png",
     alt: "Weather app",
-    link: "https://weather-app-landing-page.vercel.app/",
+    link: "https://local-weather-app-red.vercel.app/",
   },
 ]);
 </script>

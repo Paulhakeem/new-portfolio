@@ -122,3 +122,9 @@
   }
 }
 
+body {
+  @apply antialiased;
+  @apply font-sans text-base leading-7 tracking-normal;
+  
+}
+

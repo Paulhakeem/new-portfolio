@@ -70,7 +70,7 @@ const images = ref([
     title: "BnB",
     src: "/images/My holiday deals.png",
     alt: "BnB",
-    link: "https://my-holiday-deals.vercel.app/",
+    link: "https://my-holidays.vercel.app/",
   },
   {
     title: "Weather app",

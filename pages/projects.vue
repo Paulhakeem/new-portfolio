@@ -37,10 +37,10 @@
 <script setup>
 const images = ref([
   {
-    title: "AI-car-Landing Page",
-    src: "/images/1.png",
+    title: "Skywork Website",
+    src: "/images/skywork.png",
     alt: "AI",
-    link: "https://ai-car-six.vercel.app/",
+    link: "https://skywork.vercel.app/",
   },
   {
     title: "Car Rental Landing Page",

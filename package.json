@@ -33,6 +33,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@iconify-json/tdesign": "^1.2.8",
     "typescript": "^5.8.3"
   }
 }

@@ -10,7 +10,7 @@
         </p>
       </div>
       <!-- Add your project content here -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pt-6">
+      <div class="mx-auto max-w-6xl px-4 pt-5 sm:px-6 lg:px-4 grid md:grid-cols-2 lg:grid-cols-3 gap-12">
         <div v-for="(image, index) in images" :key="index"
           class="bg-[#2b2e41] w-72 h-auto p-4 rounded-md m-auto"
         >
@@ -67,7 +67,7 @@ const images = ref([
     link: "https://pre-movies.vercel.app/",
   },
   {
-    title: "BnB",
+    title: "myholidays Website",
     src: "/images/My holiday deals.png",
     alt: "BnB",
     link: "https://my-holidays.vercel.app/",

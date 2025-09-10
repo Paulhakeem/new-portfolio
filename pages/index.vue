@@ -1,6 +1,6 @@
 <template>
-  <header class="grid pt-12 mx-4">
-    <div class="flex flex-wrap gap-10 justify-center items-center m-auto">
+  <header class="lg:grid pt-12 mx-4">
+    <div class="flex flex-wrap justify-center items-center m-auto sm:gap-3 md:gap-5 lg:gap-10">
       <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
         <h1 class="text-3xl font-bold text-[#dcdee8]">
           Hi!👋, I'm Paul,<br />

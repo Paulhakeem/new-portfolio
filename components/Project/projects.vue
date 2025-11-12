@@ -1,55 +1,78 @@
 <template>
- <Stepper class="justify-center items-center">
-    <StepperItem
-      v-for="item in steps"
-      :key="item.step"
-      class="basis-1/4"
-      :step="item.step"
-    >
-      <StepperTrigger>
-        <StepperIndicator>
-          <component :is="item.icon" class="w-4 h-4" />
-        </StepperIndicator>
-        <div class="flex flex-col ">
-          <StepperTitle>
-            {{ item.title }}
-          </StepperTitle>
-          <StepperDescription>
-            {{ item.description }}
-          </StepperDescription>
-        </div>
-      </StepperTrigger>
-      <StepperSeparator
-        v-if="item.step !== steps[steps.length - 1].step"
-        class="w-full h-px"
-      />
-    </StepperItem>
-  </Stepper>
+  <section class="overflow-hidden bg-[#23253a] py-10">
+    <div class="relative flex overflow-x-hidden">
+      <!-- First row of images -->
+      <div class="flex animate-slide">
+        <img
+          src=""
+          class="w-60 sm:w-72 md:w-80 mx-4 rounded-xl"
+          alt="slide1"
+        />
+        <img
+          src=""
+          class="w-60 sm:w-72 md:w-80 mx-4 rounded-xl"
+          alt="slide2"
+        />
+        <img
+          src=""
+          class="w-60 sm:w-72 md:w-80 mx-4 rounded-xl"
+          alt="slide3"
+        />
+        <img
+          src=""
+          class="w-60 sm:w-72 md:w-80 mx-4 rounded-xl"
+          alt="slide4"
+        />
+        <img
+          src=""
+          class="w-60 sm:w-72 md:w-80 mx-4 rounded-xl"
+          alt="slide5"
+        />
+      </div>
+
+      <!-- Duplicate row for seamless infinite scroll -->
+      <div class="flex animate-slide">
+        <img
+          src=""
+          class="w-60 sm:w-72 md:w-80 mx-4 rounded-xl"
+          alt="slide1"
+        />
+        <img
+          src=""
+          class="w-60 sm:w-72 md:w-80 mx-4 rounded-xl"
+          alt="slide2"
+        />
+        <img
+          src=""
+          class="w-60 sm:w-72 md:w-80 mx-4 rounded-xl"
+          alt="slide3"
+        />
+        <img
+          src=""
+          class="w-60 sm:w-72 md:w-80 mx-4 rounded-xl"
+          alt="slide4"
+        />
+        <img
+          src=""
+          class="w-60 sm:w-72 md:w-80 mx-4 rounded-xl"
+          alt="slide5"
+        />
+      </div>
+    </div>
+  </section>
 </template>
-<script setup>
-import { BookUser, Check, CreditCard, Truck } from "lucide-vue-next"
+<script setup></script>
+<style scoped>
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
-import { Stepper, StepperDescription, StepperIndicator, StepperItem, StepperSeparator, StepperTitle, StepperTrigger } from "@/components/ui/stepper"
-
-const steps = [{
-  step: 1,
-  title: "Address",
-  description: "Add your address here",
-  icon: BookUser,
-}, {
-  step: 2,
-  title: "Shipping",
-  description: "Set your preferred shipping method",
-  icon: Truck,
-}, {
-  step: 3,
-  title: "Payment",
-  description: "Add any payment information you have",
-  icon: CreditCard,
-}, {
-  step: 4,
-  title: "Checkout",
-  description: "Confirm your order",
-  icon: Check,
-}]
-</script>
+.animate-slide {
+  animation: slide 25s linear infinite;
+}
+</style>

@@ -1,5 +1,6 @@
 <template>
-  <header class="lg:grid pt-12 mx-4">
+  <div>
+    <header class="lg:grid pt-12 mx-4">
     <div class="flex flex-wrap justify-center items-center m-auto sm:gap-3 md:gap-5 lg:gap-10">
       <div data-aos="fade-up-right" data-aos-anchor-placement="top-center">
         <h1 class="text-3xl font-bold text-[#dcdee8]">
@@ -107,7 +108,12 @@
     <div class="m-auto max-w-3xl px-4">
       <Skills />
     </div>
+
+    <div>
+     <ProjectProjects/>
+    </div>
   </main>
+  </div>
 </template>
 
 <script setup>

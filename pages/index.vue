@@ -35,7 +35,7 @@
           >
 
           <div class="mt-6 flex justify-center md:justify-start">
-            <a href="/PAUL.pdf" download="Paul_Nyamawi_CV.pdf">
+            <a href="/images/PAUL.pdf" download="Paul_Nyamawi_CV.pdf">
               <Button
                 class="bg-[#ff4b57] hover:bg-[#ff6b77] transition duration-300 flex items-center gap-2 px-5 py-2 rounded-full text-white font-medium"
               >

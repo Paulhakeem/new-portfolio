@@ -23,7 +23,7 @@
           <div
             class="absolute inset-0 bg-black/50 flex flex-col justify-end p-4"
           >
-            <h3 class="text-white text-lg font-bold">
+            <h3 class="text-white text-xl font-bold py-4">
               {{ img.title }}
             </h3>
 

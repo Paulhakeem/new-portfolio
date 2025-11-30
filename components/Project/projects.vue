@@ -3,12 +3,21 @@
     <div class="text-center text-2xl text-gray-200 pb-10 font-light">
       <h1>My <span>Projects</span></h1>
     </div>
-    <div class="relative flex overflow-x-hidden">
-      <!-- First row of images -->
-      <div v-for="img in images" :key="img" class="flex animate-slide">
-        <!-- ITEM 1 -->
-        <div class="relative w-80 mx-4 rounded-xl overflow-hidden">
-          <img :src="img.src" class="w-full h-full object-cover" />
+
+    <!-- SLIDER WRAPPER -->
+    <div class="relative overflow-x-hidden">
+      <!-- ROW (Animated Slide) -->
+      <div class="flex animate-slide gap-4">
+        <!-- PROJECT CARD -->
+        <div
+          v-for="img in images"
+          :key="img"
+          class="relative shrink-0 w-64 sm:w-72 md:w-80 lg:w-96 xl:w-md 2xl:w-lg rounded-xl overflow-hidden"
+        >
+          <img
+            :src="img.src"
+            class="w-full h-48 sm:h-56 md:h-64 object-cover"
+          />
 
           <!-- Overlay -->
           <div
@@ -28,7 +37,6 @@
           </div>
         </div>
       </div>
-      <!-- dublicate -->
     </div>
   </section>
 </template>

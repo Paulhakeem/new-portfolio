@@ -28,6 +28,5 @@ const menu = [
   { name: 'Home', path: '/' },
   { name: 'Project', path: '/projects' },
   { name: 'Graphics', path: '/graphics' },
-  { name: 'Contact', path: '/contacts' }
 ];
 </script>

@@ -133,6 +133,9 @@
       <div>
         <ProjectProjects />
       </div>
+      <div>
+        <Contacts />
+      </div>
     </main>
   </div>
 </template>

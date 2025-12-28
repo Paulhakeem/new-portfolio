@@ -19,35 +19,35 @@
 <script setup>
 const photos = ref([
   {
-    src: "/photos/bnb.jpg",
+    src: "/photos/bnb.png",
     alt: "Gallery Image",
   },
   {
-    src: "/photos/Apartment.jpg",
+    src: "/photos/Apartment.png",
     alt: "Gallery Image",
   },
   {
-    src: "/photos/confirm.jpg",
+    src: "/photos/confirm.png",
     alt: "Gallery Image",
   },
   {
-    src: "/photos/holiday.jpg",
+    src: "/photos/holiday.png",
     alt: "Gallery Image",
   },
   {
-    src: "/photos/jamhuri.jpg",
+    src: "/photos/jamhuri.png",
     alt: "Gallery Image",
   },
   {
-    src: "/photos/year.jpg",
+    src: "/photos/year.png",
     alt: "Gallery Image",
   },
   {
-    src: "/photos/offer.jpg",
+    src: "/photos/offer.png",
     alt: "Gallery Image",
   },
   {
-    src: "/photos/valentines.jpg",
+    src: "/photos/valentines.png",
     alt: "Gallery Image",
   },
 ]);

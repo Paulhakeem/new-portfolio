@@ -6,10 +6,14 @@
         v-for="(photo, index) in photos"
         :key="index"
       >
-        <img
+        <!-- <img
           class="w-full object-cover"
           :src="photo.src"
           :alt="photo.alt"
+        /> -->
+        <NuxtImg :src="photo.src"
+        loading="lazy"
+        format="webp"
         />
       </div>
     </div>

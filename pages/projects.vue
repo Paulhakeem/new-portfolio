@@ -78,5 +78,11 @@ const images = ref([
     alt: "Weather app",
     link: "https://local-weather-app-red.vercel.app/",
   },
+  {
+    title: "Event Booking",
+    src: "/images/7.png",
+    alt: "Event Booking",
+    link: "https://letsbook.vercel.app/",
+  },
 ]);
 </script>

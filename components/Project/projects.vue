@@ -1,46 +1,49 @@
 <template>
-  <section class="overflow-hidden bg-[#23253a] py-10">
-    <div class="text-center text-2xl text-gray-200 pb-10 font-light">
-      <h1>My <span>Projects</span></h1>
+  <section id="projects" class="py-12">
+    <div class="text-center text-2xl text-gray-200 pb-8 font-light">
+      <h1>My <span class="text-[#ff4b57]">Projects</span></h1>
     </div>
 
-    <!-- SLIDER WRAPPER -->
-    <div class="relative overflow-x-hidden">
-      <!-- ROW (Animated Slide) -->
-      <div class="flex animate-slide gap-4">
-        <!-- PROJECT CARD -->
-        <div
-          v-for="img in images"
-          :key="img"
-          class="relative shrink-0 w-64 sm:w-72 md:w-80 lg:w-96 xl:w-md 2xl:w-lg rounded-xl overflow-hidden"
-        >
-          <img
-            :src="img.src"
-            class="w-full h-48 sm:h-56 md:h-64 object-cover"
-          />
+    <div class="mx-auto max-w-6xl px-4 relative">
+      <Carousel :opts="{ align: 'start', containScroll: 'trimSnaps' }">
+        <template #default>
+          <CarouselContent>
+            <CarouselItem v-for="img in images" :key="img.title" class="w-64 sm:w-72 md:w-80 lg:w-96">
+              <div class="project-card rounded-xl overflow-hidden shadow-lg bg-gray-800">
+                <img :src="img.src" :alt="img.alt" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" />
+                <div class="p-4">
+                  <h3 class="text-white text-lg font-semibold">{{ img.title }}</h3>
+                  <p class="text-gray-300 text-sm mt-2">A snapshot of the project and quick link.</p>
+                  <div class="mt-4">
+                    <a :href="img.link" target="_blank" class="inline-block px-3 py-2 bg-[#ff4b57] text-white text-sm rounded-md hover:bg-[#ff6b77] transition">View Project</a>
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
 
-          <!-- Overlay -->
-          <div
-            class="absolute inset-0 bg-black/50 flex flex-col justify-end p-4"
-          >
-            <h3 class="text-white text-xl font-bold py-4">
-              {{ img.title }}
-            </h3>
-
-            <a
-              :href="img.link"
-              class="px-3 py-1 bg-[#ff4b57] text-white text-sm rounded-md w-fit"
-              target="_blank"
-            >
-              View Project
-            </a>
+          <div class="absolute left-0 top-1/2 -translate-y-1/2">
+            <CarouselPrevious />
           </div>
-        </div>
-      </div>
+
+          <div class="absolute right-0 top-1/2 -translate-y-1/2">
+            <CarouselNext />
+          </div>
+        </template>
+      </Carousel>
     </div>
   </section>
 </template>
 <script setup>
+import { ref } from 'vue'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel'
+
 const images = ref([
   {
     title: "Skywork Website",
@@ -87,16 +90,11 @@ const images = ref([
 ]);
 </script>
 <style scoped>
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+/* project card small helpers */
+.project-card {
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-
-.animate-slide {
-  animation: slide 25s linear infinite;
+.project-card:hover {
+  transform: translateY(-6px);
 }
 </style>

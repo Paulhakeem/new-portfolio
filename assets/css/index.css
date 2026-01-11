@@ -128,3 +128,12 @@ body {
   
 }
 
+/* Accessibility: clear focus outlines for keyboard users */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid rgba(255,75,87,0.16);
+  outline-offset: 3px;
+}
+

@@ -4,9 +4,17 @@
     <p class="text-gray-400 mt-2">Tools and technologies I use regularly</p>
 
     <div class="mt-6">
-      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 justify-items-center">
-        <div v-for="(skill, index) in techSkils" :key="index" class="w-full flex flex-col items-center">
-          <div class="skill-bubble w-16 h-16 rounded-xl bg-gradient-to-br from-[#1b2130] to-[#2b2e41] flex items-center justify-center shadow-md">
+      <div
+        class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 justify-items-center"
+      >
+        <div
+          v-for="(skill, index) in techSkils"
+          :key="index"
+          class="w-full flex flex-col items-center"
+        >
+          <div
+            class="skill-bubble w-16 h-16 rounded-xl bg-gradient-to-br from-[#1b2130] to-[#2b2e41] flex items-center justify-center shadow-md"
+          >
             <Icon :name="skill.icon" class="text-[#ff4b57] text-2xl" />
           </div>
           <p class="text-gray-300 text-sm mt-2 truncate">{{ skill.name }}</p>
@@ -17,7 +25,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 const techSkils = ref([
   {
@@ -33,11 +41,11 @@ const techSkils = ref([
     name: "WordPress",
   },
   {
-    icon: "devicon:html5",
+    icon: "material-icon-theme:html",
     name: "HTML",
   },
   {
-    icon: "devicon:css3",
+    icon: "skill-icons:css",
     name: "CSS",
   },
   {
@@ -49,19 +57,19 @@ const techSkils = ref([
     name: "JavaScript",
   },
   {
-    icon: "devicon:vuejs",
+    icon: "material-icon-theme:vue",
     name: "Vue.js",
   },
   {
-    icon: "devicon:nuxtjs",
+    icon: "material-icon-theme:nuxt",
     name: "Nuxt.js",
   },
   {
-    icon: "devicon:git",
+    icon: "material-icon-theme:git",
     name: "Git",
   },
   {
-    icon: "devicon:github",
+    icon: "ri:github-fill",
     name: "GitHub",
   },
   {
@@ -80,15 +88,25 @@ const techSkils = ref([
     icon: "devicon:firebase",
     name: "Firebase",
   },
+  {
+    icon: "devicon:mysql",
+    name: "MySQL",
+  },
+  {
+    icon: "devicon:php",
+    name: "PHP",
+  },
 ]);
 </script>
 
 <style scoped>
 .skill-bubble {
-  transition: transform .18s ease, box-shadow .18s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
 }
 .skill-bubble:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 </style>

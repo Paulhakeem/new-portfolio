@@ -1,40 +1,74 @@
 <template>
-  <section class="pt-10">
-    <div class="p-4">
-      <div class="ml-[4em]">
-        <h1 class="text-2xl font-semibold text-gray-300">
-          <span class="text-[#ff4b57]">My-</span> Projects
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Section Header -->
+      <div class="text-center mb-14">
+        <h1 class="text-3xl md:text-4xl font-semibold text-white">
+          My
+          <span class="bg-gradient-to-r from-[#ff4b57] to-pink-400 bg-clip-text text-transparent">
+            Projects
+          </span>
         </h1>
-        <p class="mt-2 text-gray-400">
-          Here you can find a list of my projects.
+
+        <p class="text-gray-400 mt-3 text-sm md:text-base">
+          Here are some projects I’ve built recently.
         </p>
       </div>
-      <!-- Add your project content here -->
-      <div class="mx-auto max-w-6xl px-4 pt-5 sm:px-6 lg:px-4 grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-        <div v-for="(image, index) in images" :key="index"
-          class="bg-[#2b2e41] w-72 h-auto p-4 rounded-md m-auto"
+
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <div
+          v-for="(image, index) in images"
+          :key="index"
+          class="project-card rounded-2xl overflow-hidden bg-white/5 backdrop-blur border border-white/10"
         >
-            <div class="flex justify-center items-center mt-2">
-              <img :src="image.src" alt="AI Icon" class="" />
+
+          <!-- Image -->
+          <div class="relative overflow-hidden">
+            <img
+              :src="image.src"
+              :alt="image.alt"
+              class="w-full h-52 object-cover transition duration-500 hover:scale-110"
+            />
+
+            <!-- overlay button -->
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 flex items-center justify-center transition"
+            >
+              <a :href="image.link" target="_blank">
+                <button
+                  class="flex items-center gap-2 px-4 py-2 bg-[#ff4b57] text-white rounded-lg hover:bg-pink-500 transition"
+                >
+                  Visit Project
+                  <Icon name="ri:external-link-line" size="18" />
+                </button>
+              </a>
             </div>
-            <div class="pt-4">
-              <p class="text-md text-[#ff4b57] font-semibold">
-                {{ image.title }}
-              </p>
-            </div>
-            <a :href="image.link" target="_blank">
-              <Button class="mt-4 bg-gray-300 text-gray-700 cursor-pointer my-2"
-                >Visit
-                <Icon class="ml-2" name="ri:external-link-line" size="16" />
-              </Button>
-            </a>
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-white">
+              {{ image.title }}
+            </h3>
+
+            <p class="text-gray-400 text-sm mt-2">
+              A simple preview of the project with a link to explore it.
+            </p>
+          </div>
+
         </div>
+
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import { ref } from "vue"
+
 const images = ref([
   {
     title: "Skywork Website",
@@ -84,5 +118,17 @@ const images = ref([
     alt: "Event Booking",
     link: "https://letsbook.vercel.app/",
   },
-]);
+])
 </script>
+
+<style scoped>
+.project-card {
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(255,75,87,0.25);
+}
+</style>

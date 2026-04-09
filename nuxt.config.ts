@@ -27,9 +27,21 @@ export default defineNuxtConfig({
     componentDir: "./components/ui",
   },
   runtimeConfig: {
+    emailUsername: process.env.EMAIL_USERNAME,
+    emailPassword: process.env.EMAIL_PASSWORD,
     public: {
-      EMAIL_USERNAME: process.env.EMAIL_USERNAME,
-      EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
-    }, // no need to expose sensitive info
+      // Add any public config here if needed
+    },
+  },
+  routeRules: {
+    "/**": {
+      headers: {
+        "Content-Security-Policy":
+          "default-src 'self'; script-src 'self' 'unsafe-inline' https://*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;",
+        "X-Frame-Options": "DENY",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+      },
+    },
   },
 });

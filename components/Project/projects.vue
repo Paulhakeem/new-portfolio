@@ -1,32 +1,32 @@
 <template>
   <section id="projects" class="py-16 relative overflow-hidden">
-
     <!-- Section Title -->
     <div class="text-center pb-10">
       <h1 class="text-3xl md:text-4xl font-semibold text-white">
         My
-        <span class="bg-gradient-to-r from-[#ff4b57] to-pink-400 bg-clip-text text-transparent">
+        <span
+          class="bg-gradient-to-r from-[#ff4b57] to-pink-400 bg-clip-text text-transparent"
+        >
           Projects
         </span>
       </h1>
-      <p class="text-gray-400 mt-2 text-sm">Some things I've been building recently ✨</p>
+      <p class="text-gray-400 mt-2 text-sm">
+        Some things I've been building recently ✨
+      </p>
     </div>
 
     <div class="mx-auto max-w-6xl px-4 relative">
       <Carousel :opts="{ align: 'start', containScroll: 'trimSnaps' }">
-
         <template #default>
           <CarouselContent>
-
             <CarouselItem
               v-for="img in images"
               :key="img.title"
-              class="w-64 sm:w-72 md:w-80 lg:w-96"
+              class="w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96"
             >
               <div
                 class="project-card rounded-2xl overflow-hidden bg-white/5 backdrop-blur-lg border border-white/10"
               >
-
                 <!-- Image -->
                 <div class="relative overflow-hidden">
                   <img
@@ -42,7 +42,7 @@
                     <a
                       :href="img.link"
                       target="_blank"
-                      class="px-4 py-2 text-sm bg-[#ff4b57] rounded-lg text-white hover:bg-pink-500 transition"
+                      class="px-4 py-3 text-base bg-[#ff4b57] rounded-lg text-white hover:bg-pink-500 transition min-h-[44px] flex items-center justify-center"
                     >
                       View Project →
                     </a>
@@ -78,10 +78,8 @@
                     </span>
                   </div>
                 </div>
-
               </div>
             </CarouselItem>
-
           </CarouselContent>
 
           <!-- Navigation -->
@@ -92,7 +90,6 @@
           <div class="absolute right-0 top-1/2 -translate-y-1/2">
             <CarouselNext />
           </div>
-
         </template>
       </Carousel>
     </div>
@@ -100,14 +97,14 @@
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref } from "vue";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
 
 const images = ref([
   {
@@ -152,19 +149,17 @@ const images = ref([
     alt: "Weather app",
     link: "https://local-weather-app-red.vercel.app/",
   },
-])
+]);
 </script>
 
 <style scoped>
-
-.project-card{
-  transition: all .35s ease;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+.project-card {
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
-.project-card:hover{
+.project-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 45px rgba(255,75,87,0.25);
+  box-shadow: 0 20px 45px rgba(255, 75, 87, 0.25);
 }
-
 </style>

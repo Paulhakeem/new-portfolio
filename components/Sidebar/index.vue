@@ -24,25 +24,49 @@
         leave-from-class="translate-x-0"
         leave-to-class="-translate-x-full"
       >
-        <div v-if="open" class="fixed top-0 left-0 w-full h-screen z-[999]">
-          <Icon
-            class="absolute top-0 right-4 cursor-pointer text-gray-300 justify-start"
-            size="30"
-            name="material-symbols:close"
-            @click="openCloseSidebar"
-          />
-          <SidebarMenu />
+        <div
+          v-if="open"
+          class="fixed top-0 left-0 w-full h-screen z-[999] bg-[#192030]/95 backdrop-blur-sm"
+        >
+          <div class="flex justify-end p-4">
+            <Icon
+              class="cursor-pointer text-gray-300"
+              size="30"
+              name="material-symbols:close"
+              @click="openCloseSidebar"
+            />
+          </div>
+          <div
+            class="flex flex-col items-center justify-center h-full space-y-8"
+          >
+            <RouterLink
+              v-for="item in menu"
+              :key="item.name"
+              :to="item.path"
+              class="text-2xl text-gray-300 hover:text-[#ff4b57] transition-colors"
+              @click="openCloseSidebar"
+            >
+              {{ item.name }}
+            </RouterLink>
+          </div>
         </div>
       </Transition>
     </div>
-    <div class="hidden md:flex lg:flex w-[300x] flex-col justify-between">
+    <div class="hidden md:flex lg:flex w-[300px] flex-col justify-between">
       <SidebarMenu />
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 const open = ref(false);
+const menu = [
+  { name: "Home", path: "/" },
+  { name: "Project", path: "/projects" },
+  { name: "Graphics", path: "/graphics" },
+];
 
 const openCloseSidebar = () => {
   open.value = !open.value;

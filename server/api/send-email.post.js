@@ -1,4 +1,6 @@
 import nodemailer from "nodemailer";
+import { validate } from "email-validator";
+import DOMPurify from "isomorphic-dompurify";
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
@@ -10,33 +12,47 @@ export default defineEventHandler(async (event) => {
   if (!to || !subject || !text || !name) {
     throw createError({
       statusCode: 400,
-      statusMessage: "Missing required fields: to, subject, or text",
+      statusMessage: "Missing required fields: to, subject, text, or name",
     });
   }
+
+  // Validate email format
+  if (!validate(to)) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: "Invalid email address",
+    });
+  }
+
+  // Sanitize inputs
+  const sanitizedName = DOMPurify.sanitize(name);
+  const sanitizedSubject = DOMPurify.sanitize(subject);
+  const sanitizedText = DOMPurify.sanitize(text);
 
   // Setup transporter
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: config.public.EMAIL_USERNAME,
-      pass: config.public.EMAIL_PASSWORD,
+      user: config.emailUsername,
+      pass: config.emailPassword,
     },
   });
 
   const mailOptions = {
-    from: to,
-    to: config.public.EMAIL_USERNAME, // Use the configured email address
-    subject,
-    text: `From: ${name} <${to}>\n\n${text}`,
+    from: config.emailUsername, // Use your email as sender
+    replyTo: to, // User's email for replies
+    to: config.emailUsername, // Send to yourself
+    subject: sanitizedSubject,
+    text: `From: ${sanitizedName} <${to}>\n\n${sanitizedText}`,
   };
 
   const confirmationMail = {
-    from: config.emailUser,
+    from: config.emailUsername,
     to: to,
     subject: "Thanks for contacting me!",
     html: `
     <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-      <h2 style="color: #ff4b57;">Hi ${name},</h2>
+      <h2 style="color: #ff4b57;">Hi ${sanitizedName},</h2>
       <p>Thank you for reaching out to me! 🙌</p>
       <p>I've received your message and will get back to you shortly.</p>
       <br />

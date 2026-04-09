@@ -1,12 +1,13 @@
 <template>
   <section class="py-16">
-    <div class="max-w-7xl mx-auto px-6">
-
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-14">
         <h1 class="text-3xl md:text-4xl font-semibold text-white">
           My
-          <span class="bg-gradient-to-r from-[#ff4b57] to-pink-400 bg-clip-text text-transparent">
+          <span
+            class="bg-gradient-to-r from-[#ff4b57] to-pink-400 bg-clip-text text-transparent"
+          >
             Projects
           </span>
         </h1>
@@ -18,13 +19,11 @@
 
       <!-- Projects Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-
         <div
           v-for="(image, index) in images"
           :key="index"
           class="project-card rounded-2xl overflow-hidden bg-white/5 backdrop-blur border border-white/10"
         >
-
           <!-- Image -->
           <div class="relative overflow-hidden">
             <img
@@ -39,7 +38,7 @@
             >
               <a :href="image.link" target="_blank">
                 <button
-                  class="flex items-center gap-2 px-4 py-2 bg-[#ff4b57] text-white rounded-lg hover:bg-pink-500 transition"
+                  class="flex items-center gap-2 px-4 py-3 bg-[#ff4b57] text-white rounded-lg hover:bg-pink-500 transition min-h-[44px] text-base"
                 >
                   Visit Project
                   <Icon name="ri:external-link-line" size="18" />
@@ -58,16 +57,14 @@
               A simple preview of the project with a link to explore it.
             </p>
           </div>
-
         </div>
-
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref } from "vue";
 
 const images = ref([
   {
@@ -118,17 +115,17 @@ const images = ref([
     alt: "Event Booking",
     link: "https://letsbook.vercel.app/",
   },
-])
+]);
 </script>
 
 <style scoped>
 .project-card {
   transition: all 0.35s ease;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 
 .project-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 45px rgba(255,75,87,0.25);
+  box-shadow: 0 20px 45px rgba(255, 75, 87, 0.25);
 }
 </style>

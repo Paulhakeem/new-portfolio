@@ -1,11 +1,11 @@
 <template>
   <div>
-    <header class="pt-12 mx-4">
+    <header class="pt-12">
       <div
-        class="mx-auto max-w-6xl px-4 py-14 bg-gradient-to-br from-[#0f1724] via-[#23253a] to-[#121426] rounded-3xl shadow-lg"
+        class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 bg-gradient-to-br from-[#0f1724] via-[#23253a] to-[#121426] rounded-3xl shadow-lg"
       >
         <div
-          class="flex flex-col-reverse md:flex-row items-center justify-between gap-10"
+          class="flex flex-col-reverse md:flex-row items-center justify-between gap-6 md:gap-10 lg:gap-12"
         >
           <!-- Left Text Section -->
           <div
@@ -36,7 +36,7 @@
             >
               <a href="/images/PAUL.pdf" download="Paul_Nyamawi_CV.pdf">
                 <Button
-                  class="bg-[#ff4b57] hover:bg-[#ff6b77] transition duration-300 flex items-center gap-2 px-5 py-2 rounded-full text-white font-medium"
+                  class="bg-[#ff4b57] hover:bg-[#ff6b77] transition duration-300 flex items-center gap-2 px-4 sm:px-5 py-3 sm:py-2 rounded-full text-white font-medium w-full sm:w-auto justify-center min-h-[44px]"
                 >
                   <Icon name="line-md:download-loop" size="20" />
                   Download CV
@@ -45,7 +45,7 @@
 
               <a
                 href="#projects"
-                class="mt-3 sm:mt-0 inline-flex items-center text-sm text-gray-300 hover:text-white"
+                class="mt-3 sm:mt-0 inline-flex items-center justify-center px-4 py-3 text-base sm:text-sm text-gray-300 hover:text-white border border-transparent hover:border-[#ff4b57] rounded-lg transition-all duration-300 min-h-[44px] w-full sm:w-auto"
               >
                 See Projects
                 <span class="ml-2 text-[#ff4b57]">→</span>
@@ -60,7 +60,7 @@
           >
             <!-- Profile Image -->
             <div
-              class="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden ring-4 ring-[#ff4b57] shadow-2xl hover:scale-105 transition duration-500"
+              class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden ring-4 ring-[#ff4b57] shadow-2xl hover:scale-105 transition duration-500"
             >
               <!-- glow effect -->
               <div

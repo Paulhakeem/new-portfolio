@@ -1,26 +1,23 @@
 <template>
   <div>
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 m-auto max-w-6xl">
-      <div
-        class="pt-8"
-        v-for="(photo, index) in photos"
-        :key="index"
-      >
+    <div
+      class="grid grid-cols-2 sm:grid-cols-4 gap-1 sm:gap-3 md:gap-4 m-auto max-w-6xl px-4"
+    >
+      <div class="pt-8" v-for="(photo, index) in photos" :key="index">
         <!-- <img
           class="w-full object-cover"
           :src="photo.src"
           :alt="photo.alt"
         /> -->
-        <NuxtImg :src="photo.src"
-        loading="lazy"
-        format="webp"
-        />
+        <NuxtImg :src="photo.src" loading="lazy" format="webp" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 const photos = ref([
   {
     src: "/photos/bnb.png",

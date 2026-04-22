@@ -201,10 +201,6 @@ const frontendSkills = ref([
     name: "Nuxt.js",
   },
   {
-    icon: "skill-icons:react-dark",
-    name: "React",
-  },
-  {
     icon: "skill-icons:typescript",
     name: "TypeScript",
   },

@@ -10,14 +10,53 @@
         <div
           v-for="(skill, index) in techSkils"
           :key="index"
-          class="w-full flex flex-col items-center"
+          class="skill-item group"
+          :style="{ animationDelay: `${index * 0.1}s` }"
+          data-aos="zoom-in"
+          :data-aos-delay="index * 100"
         >
-          <div
-            class="skill-bubble w-16 h-16 rounded-xl bg-gradient-to-br from-[#1b2130] to-[#2b2e41] flex items-center justify-center shadow-md"
-          >
-            <Icon :name="skill.icon" class="text-[#ff4b57] text-2xl" />
+          <div class="skill-bubble relative overflow-hidden">
+            <!-- Animated background gradient -->
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-[#1b2130] via-[#2b2e41] to-[#1b2130] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-[#ff4b57]/20 via-[#ff6b77]/20 to-[#ff4b57]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"
+            ></div>
+
+            <!-- Skill icon with floating animation -->
+            <div
+              class="relative z-10 flex items-center justify-center w-16 h-16"
+            >
+              <Icon
+                :name="skill.icon"
+                class="text-[#ff4b57] text-2xl transition-all duration-300 group-hover:text-white group-hover:scale-110 group-hover:rotate-12"
+              />
+            </div>
+
+            <!-- Hover glow effect -->
+            <div
+              class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl bg-gradient-to-r from-[#ff4b57] to-[#ff6b77]"
+            ></div>
           </div>
-          <p class="text-gray-300 text-sm mt-2 truncate">{{ skill.name }}</p>
+
+          <!-- Skill name with slide-up animation -->
+          <p
+            class="text-gray-300 text-sm mt-2 transition-all duration-300 group-hover:text-white group-hover:font-semibold transform group-hover:translate-y-[-2px]"
+          >
+            {{ skill.name }}
+          </p>
+
+          <!-- Progress indicator -->
+          <div class="mt-1 w-full bg-gray-700 rounded-full h-1 overflow-hidden">
+            <div
+              class="h-full bg-gradient-to-r from-[#ff4b57] to-[#ff6b77] rounded-full transition-all duration-1000 ease-out opacity-0 group-hover:opacity-100"
+              :style="{
+                width: skill.proficiency + '%',
+                animationDelay: `${index * 0.1 + 0.5}s`,
+              }"
+            ></div>
+          </div>
         </div>
       </div>
     </div>

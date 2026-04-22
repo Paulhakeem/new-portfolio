@@ -71,7 +71,7 @@
                   >
                   and
                   <span class="text-[#ff4b57] font-semibold"
-                    >Front-End Developer</span
+                    >Web Developer</span
                   >
                   focused on building accessible, responsive user experiences
                   with Vue.js and Nuxt.js.

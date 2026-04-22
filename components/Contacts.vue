@@ -24,7 +24,7 @@
           </span>
         </div>
 
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
           <span
             class="bg-gradient-to-r from-[#ff4b57] via-pink-400 to-[#ff6b77] bg-clip-text text-transparent"
           >
@@ -35,7 +35,7 @@
         </h2>
 
         <p
-          class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
+          class="text-gray-300 text-md md:text-lg max-w-3xl mx-auto leading-relaxed"
         >
           Ready to bring your ideas to life? Whether it's a project
           collaboration, freelance opportunity, or just a friendly chat about

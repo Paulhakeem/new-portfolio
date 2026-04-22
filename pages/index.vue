@@ -1,11 +1,5 @@
 <template>
   <div class="relative min-h-screen">
-    <!-- Particle Background -->
-    <ParticleBackground />
-
-    <!-- Theme Toggle -->
-    <ThemeToggle />
-
     <header class="pt-12 relative z-10">
       <div
         class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 bg-gradient-to-br from-[#0f1724] via-[#23253a] to-[#121426] rounded-3xl shadow-lg animate-gradient-xy relative overflow-hidden"

@@ -74,12 +74,6 @@ const images = ref([
     link: "https://skywork.vercel.app/",
   },
   {
-    title: "Car Rental Landing Page",
-    src: "/images/2.png",
-    alt: "Car Rental",
-    link: "https://dolph-seven.vercel.app/",
-  },
-  {
     title: "Online Store",
     src: "/images/3.png",
     alt: "Online Store",

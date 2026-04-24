@@ -199,8 +199,9 @@
             I'm always excited to take on new challenges and create amazing
             digital experiences.
           </p>
+          <!--number  -->
           <a
-            href="/#contact"
+            :href="`tel:+254759732432`"
             class="inline-block px-8 py-3 bg-gradient-to-r from-[#ff4b57] to-pink-400 text-white font-bold rounded-full hover:shadow-lg hover:shadow-[#ff4b57]/50 transition-all duration-300"
           >
             Let's Connect

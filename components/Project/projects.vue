@@ -20,7 +20,9 @@
             ✨ My Creative Work
           </span>
         </div>
-        <h1 class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">
+        <h1
+          class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 text-gray-200"
+        >
           Featured
           <span
             class="bg-gradient-to-r from-[#ff4b57] via-pink-400 to-[#ff6b77] bg-clip-text text-transparent"

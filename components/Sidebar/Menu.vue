@@ -1,32 +1,54 @@
 <template>
-  <!-- component -->
   <nav
-    class="font-sans flex text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-[#212437] text-gray-300 sm:items-baseline w-full"
+    class="w-full px-6 py-4 bg-gradient-to-r from-[#192030] to-[#1a2a3a] border-b border-gray-700/30 shadow-lg"
   >
-    <div class="mb-2 sm:mb-0 hidden lg:flex items-center">
-      <Icon name="mynaui:bubbles-solid" class="inline-block mr-2 text-[#ff4b57]" />
-      <RouterLink
-        to=""
-        class="text-md no-underline text-grey-darkest hover:text-blue-dark"
-        >Paul</RouterLink
+    <div class="flex items-center justify-between">
+      <!-- Logo Section -->
+      <NuxtLink
+        to="/"
+        class="flex items-center gap-2 hover:opacity-80 transition-opacity duration-200"
       >
-    </div>
-    <div class="flex flex-col sm:flex-row sm:items-baseline gap-8">
-      <RouterLink
-        v-for="item in menu"
-        :key="item.name"
-        :to="item.path"
-        class="text-md no-underline text-grey-darkest hover:text-[#ff4b57] ml-2"
-        >{{ item.name }}</RouterLink
-      >
+        <Icon name="mynaui:bubbles-solid" class="text-[#ff4b57] text-2xl" />
+        <span class="text-lg font-bold text-gray-100">Paul</span>
+      </NuxtLink>
+
+      <!-- Navigation Links -->
+      <div class="flex items-center gap-1">
+        <NuxtLink
+          v-for="item in menu"
+          :key="item.name"
+          :to="item.path"
+          class="relative flex items-center gap-2 px-4 py-2 rounded-lg text-gray-300 hover:text-[#ff4b57] transition-all duration-200 group"
+        >
+          <Icon
+            :name="item.icon"
+            size="18"
+            class="group-hover:text-[#ff4b57]"
+          />
+          <span class="text-sm font-medium">{{ item.name }}</span>
+
+          <!-- Underline Animation -->
+          <span
+            class="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-[#ff4b57] to-[#ff6b70] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+          />
+        </NuxtLink>
+      </div>
     </div>
   </nav>
 </template>
 
 <script setup>
 const menu = [
-  { name: 'Home', path: '/' },
-  { name: 'Project', path: '/projects' },
-  { name: 'Graphics', path: '/graphics' },
+  { name: "Home", path: "/", icon: "material-symbols:home-outline" },
+  {
+    name: "Projects",
+    path: "/projects",
+    icon: "material-symbols:folder-outline",
+  },
+  {
+    name: "Graphics",
+    path: "/graphics",
+    icon: "material-symbols:image-outline",
+  },
 ];
 </script>

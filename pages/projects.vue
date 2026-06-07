@@ -124,10 +124,14 @@
           <div
             class="relative overflow-hidden flex-shrink-0 h-64 bg-gradient-to-br from-gray-900 to-black"
           >
-            <img
+            <NuxtImg
               :src="image.src"
-              :alt="image.alt"
+              :alt="image.alt || image.title"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125 group-hover:rotate-1"
+              loading="lazy"
+              format="webp"
+              quality="75"
+              sizes="(max-width: 1024px) 100vw, 32rem"
             />
 
             <!-- Gradient Overlay -->
@@ -214,6 +218,32 @@
 
 <script setup>
 import { ref, computed } from "vue";
+
+definePageMeta({
+  title: "Projects | Paul Nyamawi",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Explore portfolio projects by Paul Nyamawi, with case studies for web apps, dashboards, and interactive UI work.",
+    },
+    {
+      property: "og:title",
+      content: "Projects | Paul Nyamawi",
+    },
+    {
+      property: "og:description",
+      content:
+        "Explore portfolio projects by Paul Nyamawi, with case studies for web apps, dashboards, and interactive UI work.",
+    },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: "/projects",
+    },
+  ],
+});
 
 const activeFilter = ref("all");
 

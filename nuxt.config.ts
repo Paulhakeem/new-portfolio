@@ -4,6 +4,61 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "en",
+      },
+      title: "Paul Nyamawi | UI Designer & Web Developer",
+      titleTemplate: "%s | Paul Nyamawi",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Portfolio of Paul Nyamawi — crafted UI and web experiences with Vue.js, Nuxt, and modern design.",
+        },
+        {
+          name: "theme-color",
+          content: "#0f1724",
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          property: "og:site_name",
+          content: "Paul Nyamawi Portfolio",
+        },
+        {
+          property: "og:description",
+          content:
+            "Portfolio of Paul Nyamawi — crafted UI and web experiences with Vue.js, Nuxt, and modern design.",
+        },
+        {
+          property: "og:image",
+          content: "http://localhost:3000/images/profile.jpg",
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "twitter:title",
+          content: "Paul Nyamawi | UI Designer & Web Developer",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Portfolio of Paul Nyamawi — crafted UI and web experiences with Vue.js, Nuxt, and modern design.",
+        },
+        {
+          name: "twitter:image",
+          content: "http://localhost:3000/images/profile.jpg",
+        },
+      ],
+      link: [{ rel: "icon", href: "/favicon.ico" }],
+    },
+  },
   css: ["~/assets/css/index.css"],
   vite: {
     plugins: [tailwindcss()],
@@ -30,7 +85,7 @@ export default defineNuxtConfig({
     emailUsername: process.env.EMAIL_USERNAME,
     emailPassword: process.env.EMAIL_PASSWORD,
     public: {
-      // Add any public config here if needed
+      siteUrl: process.env.SITE_URL || "http://localhost:3000",
     },
   },
   routeRules: {

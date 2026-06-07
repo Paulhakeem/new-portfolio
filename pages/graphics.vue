@@ -4,7 +4,13 @@
       class="grid grid-cols-2 sm:grid-cols-4 gap-1 sm:gap-3 md:gap-4 m-auto max-w-6xl px-4"
     >
       <div class="pt-8" v-for="(photo, index) in photos" :key="index">
-        <NuxtImg :src="photo.src" loading="lazy" format="webp" />
+        <NuxtImg
+          :src="photo.src"
+          :alt="photo.alt"
+          loading="lazy"
+          format="webp"
+          sizes="(max-width: 640px) 100vw, 25vw"
+        />
       </div>
     </div>
   </div>
@@ -12,6 +18,32 @@
 
 <script setup>
 import { ref } from "vue";
+
+definePageMeta({
+  title: "Graphics | Paul Nyamawi",
+  meta: [
+    {
+      name: "description",
+      content:
+        "A gallery of graphic design work by Paul Nyamawi, showcasing polished visuals and modern UI assets.",
+    },
+    {
+      property: "og:title",
+      content: "Graphics | Paul Nyamawi",
+    },
+    {
+      property: "og:description",
+      content:
+        "A gallery of graphic design work by Paul Nyamawi, showcasing polished visuals and modern UI assets.",
+    },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: "/graphics",
+    },
+  ],
+});
 
 const photos = ref([
   {

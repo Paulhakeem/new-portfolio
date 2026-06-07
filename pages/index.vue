@@ -175,10 +175,16 @@
                 <div
                   class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden ring-4 ring-[#ff4b57]/50 shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-[#ff4b57]/30"
                 >
-                  <img
+                  <NuxtImg
                     src="/images/profile.jpg"
                     alt="Paul Nyamawi - Graphic Designer & Front-End Developer"
                     class="w-full h-full object-cover"
+                    width="800"
+                    height="800"
+                    format="webp"
+                    quality="80"
+                    sizes="(max-width: 1024px) 70vw, 32rem"
+                    loading="eager"
                   />
 
                   <!-- Overlay gradient -->
@@ -224,7 +230,48 @@
 </template>
 
 <script setup>
-import { Button } from "@/components/ui/button";
+definePageMeta({
+  title: "Home | Paul Nyamawi",
+  meta: [
+    {
+      name: "description",
+      content:
+        "I design and build delightful interfaces with Vue.js and Nuxt.js — accessible, responsive web experiences for modern brands.",
+    },
+    {
+      property: "og:title",
+      content: "Paul Nyamawi | UI Designer & Web Developer",
+    },
+    {
+      property: "og:description",
+      content:
+        "I design and build delightful interfaces with Vue.js and Nuxt.js — accessible, responsive web experiences for modern brands.",
+    },
+    {
+      property: "og:image",
+      content: "/images/profile.jpg",
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      name: "twitter:title",
+      content: "Paul Nyamawi | UI Designer & Web Developer",
+    },
+    {
+      name: "twitter:description",
+      content:
+        "I design and build delightful interfaces with Vue.js and Nuxt.js — accessible, responsive web experiences for modern brands.",
+    },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: "/",
+    },
+  ],
+});
 </script>
 
 <style scoped>

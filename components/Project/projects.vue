@@ -88,10 +88,14 @@
                     <div
                       class="relative overflow-hidden flex-shrink-0 h-64 bg-gradient-to-br from-gray-900 to-black"
                     >
-                      <img
+                      <NuxtImg
                         :src="img.src"
-                        :alt="img.alt"
+                        :alt="img.alt || img.title"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125 group-hover:rotate-1"
+                        loading="lazy"
+                        format="webp"
+                        quality="75"
+                        sizes="(max-width: 1024px) 100vw, 33vw"
                       />
 
                       <!-- Gradient Overlay -->
@@ -179,10 +183,14 @@
           <div
             class="relative overflow-hidden flex-shrink-0 h-56 bg-gradient-to-br from-gray-900 to-black"
           >
-            <img
+            <NuxtImg
               :src="img.src"
-              :alt="img.alt"
+              :alt="img.alt || img.title"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-1"
+              loading="lazy"
+              format="webp"
+              quality="75"
+              sizes="(max-width: 1024px) 100vw, 33vw"
             />
 
             <div

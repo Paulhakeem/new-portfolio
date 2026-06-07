@@ -286,7 +286,7 @@ const images = ref([
       "Seamless event booking platform with calendar integration and payment processing.",
     category: "Booking",
     featured: false,
-    link: "https://letsbook.vercel.app/",
+    link: "https://velora.codewithpaul.dev",
   },
 ]);
 

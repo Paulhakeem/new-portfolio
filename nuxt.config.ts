@@ -1,9 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
 
+const siteUrl = process.env.SITE_URL || "http://localhost:3000";
+const isProd = process.env.NODE_ENV === "production";
+const csp =
+  "default-src 'self'; script-src 'self' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https:; img-src 'self' data: https:; connect-src 'self' https:;";
+
+const securityHeaders: Record<string, string> = {
+  "Content-Security-Policy": csp,
+  "X-Frame-Options": "DENY",
+  "X-Content-Type-Options": "nosniff",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+};
+if (isProd && siteUrl.startsWith("https")) {
+  securityHeaders["Strict-Transport-Security"] =
+    "max-age=63072000; includeSubDomains; preload";
+}
+
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.NODE_ENV !== "production" },
   app: {
     head: {
       htmlAttrs: {
@@ -12,6 +28,8 @@ export default defineNuxtConfig({
       title: "Paul Nyamawi | UI Designer & Web Developer",
       titleTemplate: "%s | Paul Nyamawi",
       meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
           name: "description",
           content:
@@ -36,7 +54,7 @@ export default defineNuxtConfig({
         },
         {
           property: "og:image",
-          content: "http://localhost:3000/images/profile.jpg",
+          content: `${siteUrl}/images/profile.jpg`,
         },
         {
           name: "twitter:card",
@@ -53,7 +71,7 @@ export default defineNuxtConfig({
         },
         {
           name: "twitter:image",
-          content: "http://localhost:3000/images/profile.jpg",
+          content: `${siteUrl}/images/profile.jpg`,
         },
       ],
       link: [{ rel: "icon", href: "/favicon.ico" }],
@@ -85,17 +103,13 @@ export default defineNuxtConfig({
     emailUsername: process.env.EMAIL_USERNAME,
     emailPassword: process.env.EMAIL_PASSWORD,
     public: {
-      siteUrl: process.env.SITE_URL || "http://localhost:3000",
+      siteUrl,
     },
   },
   routeRules: {
     "/**": {
       headers: {
-        "Content-Security-Policy":
-          "default-src 'self'; script-src 'self' 'unsafe-inline' https://*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;",
-        "X-Frame-Options": "DENY",
-        "X-Content-Type-Options": "nosniff",
-        "Referrer-Policy": "strict-origin-when-cross-origin",
+        ...securityHeaders,
       },
     },
   },

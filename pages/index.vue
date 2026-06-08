@@ -175,7 +175,7 @@
                 <div
                   class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden ring-4 ring-[#ff4b57]/50 shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-[#ff4b57]/30"
                 >
-                  <NuxtImg
+                  <img
                     src="/images/profile.jpg"
                     alt="Paul Nyamawi - Graphic Designer & Front-End Developer"
                     class="w-full h-full object-cover"

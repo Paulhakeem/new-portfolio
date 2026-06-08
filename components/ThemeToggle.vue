@@ -1,28 +1,64 @@
 ﻿<template>
   <button
     @click="toggleTheme"
-    class="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-gradient-to-r from-[#ff4b57] to-[#ff6b77] hover:from-[#ff6b77] hover:to-[#ff8b97] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 group"
-    :aria-label="
-      colorMode.value === 'dark'
-        ? 'Switch to light mode'
-        : 'Switch to dark mode'
+    class="fixed bottom-5 right-5 z-50 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none"
+    :class="
+      isDark
+        ? 'bg-[#1e1e2e] border border-white/10 hover:bg-[#2a2a3e]'
+        : 'bg-white border border-gray-200 hover:bg-gray-50 shadow-md'
     "
+    :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
   >
-    <Icon
-      :name="
-        colorMode.value === 'dark'
-          ? 'line-md:sun-rising-twotone-loop'
-          : 'line-md:moon-twotone-loop'
-      "
-      class="text-white text-xl transition-transform duration-300 group-hover:rotate-12"
-    />
+    <Transition name="spin" mode="out-in">
+      <Icon
+        v-if="isDark"
+        key="sun"
+        name="material-symbols:light-mode"
+        class="text-xl text-yellow-400"
+      />
+      <Icon
+        v-else
+        key="moon"
+        name="material-symbols:dark-mode"
+        class="text-xl text-gray-600"
+      />
+    </Transition>
   </button>
 </template>
 
 <script setup>
+// useColorMode is provided by @nuxt/ui — no import needed
 const colorMode = useColorMode();
 
+const isDark = computed(() => colorMode.value === "dark");
+
 const toggleTheme = () => {
-  colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
+  console.log("Toggling theme. Current mode:");
+  // colorMode.preference = isDark.value ? "light" : "dark";
 };
 </script>
+
+<style scoped>
+.spin-enter-active,
+.spin-leave-active {
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+.spin-enter-from {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+.spin-enter-to {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+.spin-leave-from {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+.spin-leave-to {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+</style>

@@ -87,16 +87,22 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/fonts",
     "@nuxt/image",
+    "@vueuse/nuxt",
   ],
+
+  colorMode: {
+    classSuffix: "",
+    preference: "system",
+    fallback: "light",
+  },
+
+  // @nuxt/ui config
+  ui: {
+    colorMode: true,
+  },
+
   shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
     prefix: "",
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
     componentDir: "./components/ui",
   },
   runtimeConfig: {

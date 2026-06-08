@@ -4,7 +4,7 @@
       class="grid grid-cols-2 sm:grid-cols-4 gap-1 sm:gap-3 md:gap-4 m-auto max-w-6xl px-4"
     >
       <div class="pt-8" v-for="(photo, index) in photos" :key="index">
-        <NuxtImg
+        <img
           :src="photo.src"
           :alt="photo.alt"
           loading="lazy"

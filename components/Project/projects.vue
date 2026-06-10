@@ -183,7 +183,7 @@
           <div
             class="relative overflow-hidden flex-shrink-0 h-56 bg-gradient-to-br from-gray-900 to-black"
           >
-            <NuxtImg
+            <img
               :src="img.src"
               :alt="img.alt || img.title"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-1"

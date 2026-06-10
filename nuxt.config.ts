@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 const siteUrl = process.env.SITE_URL || "http://localhost:3000";
 const isProd = process.env.NODE_ENV === "production";
 const csp =
-  "default-src 'self'; script-src 'self' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https:; img-src 'self' data: https:; connect-src 'self' https:;";
+  "default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https:; img-src 'self' data: https:; connect-src 'self' https:;";
 
 const securityHeaders: Record<string, string> = {
   "Content-Security-Policy": csp,

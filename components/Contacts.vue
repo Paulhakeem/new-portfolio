@@ -25,7 +25,6 @@
             📬 Get In Touch
           </span>
         </div>
-
         <h2
           class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6"
         >
@@ -37,7 +36,6 @@
           <br />
           <span class="text-white">& Start Something</span>
         </h2>
-
         <p
           class="text-gray-300 text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed px-2"
         >
@@ -56,7 +54,6 @@
           <div
             class="relative bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl overflow-hidden"
           >
-            <!-- Card shine effect -->
             <div
               class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
             ></div>
@@ -105,15 +102,13 @@
                   <a
                     href="tel:+254792857288"
                     class="block text-sm sm:text-base text-white hover:text-[#ff4b57] transition-colors font-medium"
+                    >+254 792 857 288</a
                   >
-                    +254 792 857 288
-                  </a>
                   <a
                     href="tel:+254759732432"
                     class="block text-xs sm:text-sm text-gray-400 hover:text-[#ff4b57] transition-colors"
+                    >+254 759 732 432</a
                   >
-                    +254 759 732 432
-                  </a>
                 </div>
               </div>
 
@@ -136,15 +131,13 @@
                   <a
                     href="mailto:paulnyamawi18@gmail.com"
                     class="block text-sm sm:text-base text-white hover:text-[#ff4b57] transition-colors font-medium"
+                    >paulnyamawi18@gmail.com</a
                   >
-                    paulnyamawi18@gmail.com
-                  </a>
                   <a
                     href="mailto:poltechnology01@gmail.com"
                     class="block text-xs sm:text-sm text-gray-400 hover:text-[#ff4b57] transition-colors"
+                    >poltechnology01@gmail.com</a
                   >
-                    poltechnology01@gmail.com
-                  </a>
                 </div>
               </div>
 
@@ -237,7 +230,6 @@
           <div
             class="relative bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl overflow-hidden"
           >
-            <!-- Card shine effect -->
             <div
               class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
             ></div>
@@ -266,6 +258,9 @@
               </div>
             </div>
 
+            <!-- FIX: @submit.prevent on the form handles submission -->
+            <!-- The Button below now has type="button" to prevent native -->
+            <!-- form submission which was causing the page reload + /?  -->
             <form
               @submit.prevent="send"
               class="relative z-10 space-y-4 sm:space-y-6"
@@ -280,10 +275,18 @@
                   <input
                     id="name"
                     v-model="form.name"
+                    :disabled="loading"
                     required
-                    class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ff4b57] focus:border-[#ff4b57] transition-all duration-300 hover:bg-white/10 text-sm sm:text-base"
                     placeholder="Your full name"
+                    class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ff4b57] focus:border-[#ff4b57] transition-all duration-300 hover:bg-white/10 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                    :class="{
+                      'border-red-500/50 focus:ring-red-500 focus:border-red-500':
+                        errors.name,
+                    }"
                   />
+                  <p v-if="errors.name" class="text-red-400 text-xs mt-1">
+                    {{ errors.name }}
+                  </p>
                 </div>
                 <div class="space-y-2">
                   <label
@@ -295,10 +298,18 @@
                     id="email"
                     v-model="form.to"
                     type="email"
+                    :disabled="loading"
                     required
-                    class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ff4b57] focus:border-[#ff4b57] transition-all duration-300 hover:bg-white/10 text-sm sm:text-base"
                     placeholder="you@company.com"
+                    class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ff4b57] focus:border-[#ff4b57] transition-all duration-300 hover:bg-white/10 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                    :class="{
+                      'border-red-500/50 focus:ring-red-500 focus:border-red-500':
+                        errors.to,
+                    }"
                   />
+                  <p v-if="errors.to" class="text-red-400 text-xs mt-1">
+                    {{ errors.to }}
+                  </p>
                 </div>
               </div>
 
@@ -311,10 +322,18 @@
                 <input
                   id="subject"
                   v-model="form.subject"
+                  :disabled="loading"
                   required
-                  class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ff4b57] focus:border-[#ff4b57] transition-all duration-300 hover:bg-white/10 text-sm sm:text-base"
                   placeholder="Project, question, or hello"
+                  class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ff4b57] focus:border-[#ff4b57] transition-all duration-300 hover:bg-white/10 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                  :class="{
+                    'border-red-500/50 focus:ring-red-500 focus:border-red-500':
+                      errors.subject,
+                  }"
                 />
+                <p v-if="errors.subject" class="text-red-400 text-xs mt-1">
+                  {{ errors.subject }}
+                </p>
               </div>
 
               <div class="space-y-2">
@@ -326,11 +345,19 @@
                 <textarea
                   id="message"
                   v-model="form.text"
+                  :disabled="loading"
                   rows="4"
                   required
-                  class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ff4b57] focus:border-[#ff4b57] transition-all duration-300 hover:bg-white/10 resize-none text-sm sm:text-base"
                   placeholder="Tell me about your project, ideas, or how we can work together..."
+                  class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ff4b57] focus:border-[#ff4b57] transition-all duration-300 hover:bg-white/10 resize-none text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                  :class="{
+                    'border-red-500/50 focus:ring-red-500 focus:border-red-500':
+                      errors.text,
+                  }"
                 ></textarea>
+                <p v-if="errors.text" class="text-red-400 text-xs mt-1">
+                  {{ errors.text }}
+                </p>
               </div>
 
               <div
@@ -342,15 +369,16 @@
                   <span class="text-base sm:text-lg">💌</span>
                   Prefer email? I'll reply within 48 hours.
                 </p>
-                <Button
+
+                <!-- Using native <button type="submit"> + @submit.prevent on -->
+                <!-- the form is the most reliable approach — no shadcn quirks -->
+                <button
+                  type="submit"
                   :disabled="loading"
-                  class="bg-gradient-to-r from-[#ff4b57] to-[#ff6b77] hover:from-[#ff6b77] hover:to-[#ff7b87] text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg sm:rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#ff4b57]/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none flex items-center justify-center gap-2 min-h-[44px] text-sm sm:text-base"
+                  class="bg-gradient-to-r from-[#ff4b57] to-[#ff6b77] hover:from-[#ff6b77] hover:to-[#ff7b87] text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg sm:rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#ff4b57]/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none flex items-center justify-center gap-2 min-h-11 cursor-pointer text-sm sm:text-base"
                 >
                   <span v-if="loading" class="flex items-center gap-2">
-                    <Icon
-                      name="line-md:loading-twotone-loop"
-                      class="animate-spin w-4 h-4 sm:w-5 sm:h-5"
-                    />
+                    <LoaderCircle class="animate-spin w-4 h-4 sm:w-5 sm:h-5" />
                     Sending...
                   </span>
                   <span v-else class="flex items-center gap-2">
@@ -360,7 +388,7 @@
                     />
                     Send Message
                   </span>
-                </Button>
+                </button>
               </div>
             </form>
           </div>
@@ -373,30 +401,62 @@
 <script setup>
 import { ref, reactive } from "vue";
 import { useAlert } from "@/composables/useAlert";
-import { Button } from "@/components/ui/button";
+import { LoaderCircle } from "lucide-vue-next";
 
 const { showSuccess, showError } = useAlert();
 const loading = ref(false);
+const errors = reactive({ name: "", to: "", subject: "", text: "" });
 const form = reactive({ name: "", to: "", subject: "", text: "" });
 
+function validate() {
+  let valid = true;
+  Object.keys(errors).forEach((k) => (errors[k] = ""));
+
+  if (!form.name.trim()) {
+    errors.name = "Name is required";
+    valid = false;
+  }
+  if (!form.to.trim()) {
+    errors.to = "Email is required";
+    valid = false;
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.to)) {
+    errors.to = "Invalid email format";
+    valid = false;
+  }
+  if (!form.subject.trim()) {
+    errors.subject = "Subject is required";
+    valid = false;
+  }
+  if (!form.text.trim()) {
+    errors.text = "Message is required";
+    valid = false;
+  }
+
+  return valid;
+}
+
 const send = async () => {
+  if (!validate()) return;
+
   loading.value = true;
   try {
     const response = await $fetch("/api/send-email", {
       method: "POST",
       body: form,
     });
-    if (response && response.success) {
+    if (response?.success) {
       showSuccess("Message sent successfully!");
-      form.name = "";
-      form.to = "";
-      form.subject = "";
-      form.text = "";
+      Object.assign(form, { name: "", to: "", subject: "", text: "" });
+      Object.keys(errors).forEach((k) => (errors[k] = ""));
     } else {
       showError("Failed to send message. Please try again.");
     }
   } catch (err) {
-    showError("An error occurred while sending the message.");
+    const msg =
+      err?.data?.statusMessage ||
+      err?.message ||
+      "An error occurred while sending the message.";
+    showError(msg);
   } finally {
     loading.value = false;
   }
@@ -404,7 +464,6 @@ const send = async () => {
 </script>
 
 <style>
-/* Custom animations */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -413,7 +472,6 @@ const send = async () => {
     opacity: 1;
   }
 }
-
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -424,27 +482,21 @@ const send = async () => {
     transform: translateY(0);
   }
 }
-
 .animate-fade-in {
   animation: fade-in 0.8s ease-out;
 }
-
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out;
 }
-
 .animation-delay-200 {
   animation-delay: 0.2s;
 }
-
 .animation-delay-400 {
   animation-delay: 0.4s;
 }
-
 .animation-delay-1000 {
   animation-delay: 1s;
 }
-
 .animation-delay-2000 {
   animation-delay: 2s;
 }

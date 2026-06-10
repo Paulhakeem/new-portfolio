@@ -64,13 +64,16 @@ export default defineEventHandler(async (event) => {
   try {
     // Send the email
     const info = await transporter.sendMail(mailOptions);
-    // Send confirmation to user
-    await transporter.sendMail(confirmationMail);
+    // Send confirmation to user — don't fail if this errors
+    try {
+      await transporter.sendMail(confirmationMail);
+    } catch (confirmError) {
+      console.error("Confirmation email error:", confirmError);
+    }
 
     return { success: true, info };
   } catch (error) {
     console.error("SendMail error:", error);
-    // Use createError for better error feedback
     throw createError({
       statusCode: 500,
       statusMessage: "Failed to send email",

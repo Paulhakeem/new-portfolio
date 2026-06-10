@@ -1,10 +1,12 @@
 <template>
-  <div class="relative min-h-screen overflow-hidden">
+  <div
+    class="relative min-h-screen overflow-hidden bg-background text-foreground dark:bg-slate-950 dark:text-white"
+  >
     <!-- Background Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <!-- Primary gradient background -->
       <div
-        class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
+        class="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
       ></div>
 
       <!-- Animated orbs -->
@@ -15,7 +17,7 @@
         class="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"
       ></div>
       <div
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#ff4b57]/5 to-transparent rounded-full blur-3xl"
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-gradient-to-r from-[#ff4b57]/5 to-transparent rounded-full blur-3xl"
       ></div>
 
       <!-- Subtle grid pattern overlay -->
@@ -50,7 +52,9 @@
                 <h1
                   class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
                 >
-                  <span class="text-white">I design & build</span>
+                  <span class="text-slate-950 dark:text-white"
+                    >I design & build</span
+                  >
                   <br />
                   <span
                     class="bg-gradient-to-r from-[#ff4b57] via-pink-400 to-[#ff6b77] bg-clip-text text-transparent"
@@ -64,7 +68,9 @@
               <div
                 class="max-w-xl mx-auto lg:mx-0 animate-fade-in-up animation-delay-200"
               >
-                <p class="text-gray-300 text-lg sm:text-xl leading-relaxed">
+                <p
+                  class="text-slate-700 dark:text-gray-300 text-lg sm:text-xl leading-relaxed"
+                >
                   I'm a
                   <span class="text-[#ff4b57] font-semibold"
                     >Graphic Designer</span
@@ -76,7 +82,7 @@
                   focused on building accessible, responsive user experiences
                   with Vue.js and Nuxt.js.
                 </p>
-                <p class="text-gray-400 text-base mt-4">
+                <p class="text-slate-500 dark:text-gray-400 text-base mt-4">
                   I combine visual craft with practical engineering to ship
                   polished products that users love.
                 </p>
@@ -121,12 +127,12 @@
                   href="https://github.com/Paulhakeem"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="group p-3 bg-white/5 hover:bg-[#ff4b57]/20 border border-white/10 hover:border-[#ff4b57]/50 rounded-full transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+                  class="group p-3 bg-slate-100/80 dark:bg-white/5 hover:bg-[#ff4b57]/20 border border-slate-200/60 dark:border-white/10 hover:border-[#ff4b57]/50 rounded-full transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
                   aria-label="GitHub"
                 >
                   <Icon
                     name="ant-design:github-filled"
-                    class="size-6 text-gray-400 group-hover:text-white transition-colors"
+                    class="size-6 text-slate-500 dark:text-gray-400 group-hover:text-white transition-colors"
                   />
                 </a>
 
@@ -134,12 +140,12 @@
                   href="https://www.linkedin.com/in/paul-nyamawi-9244b924b/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="group p-3 bg-white/5 hover:bg-[#ff4b57]/20 border border-white/10 hover:border-[#ff4b57]/50 rounded-full transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+                  class="group p-3 bg-slate-100/80 dark:bg-white/5 hover:bg-[#ff4b57]/20 border border-slate-200/60 dark:border-white/10 hover:border-[#ff4b57]/50 rounded-full transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
                   aria-label="LinkedIn"
                 >
                   <Icon
                     name="ant-design:linkedin-filled"
-                    class="size-6 text-gray-400 group-hover:text-white transition-colors"
+                    class="size-6 text-slate-500 dark:text-gray-400 group-hover:text-white transition-colors"
                   />
                 </a>
 
@@ -147,12 +153,12 @@
                   href="https://x.com/Hakeemi20"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="group p-3 bg-white/5 hover:bg-[#ff4b57]/20 border border-white/10 hover:border-[#ff4b57]/50 rounded-full transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+                  class="group p-3 bg-slate-100/80 dark:bg-white/5 hover:bg-[#ff4b57]/20 border border-slate-200/60 dark:border-white/10 hover:border-[#ff4b57]/50 rounded-full transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
                   aria-label="Twitter"
                 >
                   <Icon
                     name="prime:twitter"
-                    class="size-6 text-gray-400 group-hover:text-white transition-colors"
+                    class="size-6 text-slate-500 dark:text-gray-400 group-hover:text-white transition-colors"
                   />
                 </a>
               </div>

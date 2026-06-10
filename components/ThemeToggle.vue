@@ -27,14 +27,11 @@
 </template>
 
 <script setup>
-// useColorMode is provided by @nuxt/ui — no import needed
 const colorMode = useColorMode();
-
 const isDark = computed(() => colorMode.value === "dark");
 
 const toggleTheme = () => {
-  console.log("Toggling theme. Current mode:");
-  // colorMode.preference = isDark.value ? "light" : "dark";
+  colorMode.value = colorMode.value === "dark" ? "light" : "dark";
 };
 </script>
 

@@ -3,15 +3,28 @@ import tailwindcss from "@tailwindcss/vite";
 
 const siteUrl = process.env.SITE_URL || "http://localhost:3000";
 const isProd = process.env.NODE_ENV === "production";
-const csp =
-  "default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https:; img-src 'self' data: https:; connect-src 'self' https:;";
+
+const cspDirectives = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https:",
+  "style-src 'self' 'unsafe-inline' https:",
+  "font-src 'self' https:",
+  "img-src 'self' data: https:",
+  "connect-src 'self' https:",
+  "frame-ancestors 'none'",
+  // Allow Vercel live preview toolbar in non-production only
+  isProd ? null : "frame-src 'self' https://vercel.live https://vercel.com",
+]
+  .filter(Boolean)
+  .join("; ");
 
 const securityHeaders: Record<string, string> = {
-  "Content-Security-Policy": csp,
-  "X-Frame-Options": "DENY",
+  "Content-Security-Policy": cspDirectives,
+  // X-Frame-Options removed — covered by frame-ancestors 'none' in CSP
   "X-Content-Type-Options": "nosniff",
   "Referrer-Policy": "strict-origin-when-cross-origin",
 };
+
 if (isProd && siteUrl.startsWith("https")) {
   securityHeaders["Strict-Transport-Security"] =
     "max-age=63072000; includeSubDomains; preload";

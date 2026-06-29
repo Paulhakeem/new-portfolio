@@ -92,16 +92,12 @@
               <div
                 class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-400"
               >
-                <a
-                  href="/images/PAUL.pdf"
-                  download="Paul_Nyamawi_CV.pdf"
-                  class="group"
-                >
+                <a href="mailto:paulnyamawi18@gmail.com">
                   <button
                     class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#ff4b57] to-pink-400 text-white font-bold rounded-full hover:shadow-lg hover:shadow-[#ff4b57]/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 min-h-[56px]"
                   >
-                    <Icon name="line-md:download-loop" size="24" />
-                    Download CV
+                    <Icon name="ri:mail-line" size="24" class="text-white" />
+                    Let's Connect
                   </button>
                 </a>
 

@@ -101,6 +101,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/image",
     "@vueuse/nuxt",
+    "@vercel/analytics",
   ],
 
   colorMode: {

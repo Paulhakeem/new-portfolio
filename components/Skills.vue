@@ -231,6 +231,10 @@ const backendSkills = ref([
     icon: "devicon:php",
     name: "PHP",
   },
+  {
+    icon: "devicon:python",
+    name: "Python",
+  },
 ]);
 
 const toolSkills = ref([

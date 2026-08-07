@@ -318,6 +318,16 @@ const images = ref([
     featured: false,
     link: "https://velora.codewithpaul.dev",
   },
+  {
+    title: "Precious Hope For Children",
+    src: "/images/8.png",
+    alt: "Precious Hope For Children",
+    description:
+      "Non-profit organization dedicated to providing support and resources for underprivileged children.",
+    category: "Non-Profit",
+    featured: false,
+    link: "https://precioushopeforchildren.vercel.app",
+  },
 ]);
 
 const filteredImages = computed(() => {

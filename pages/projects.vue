@@ -326,7 +326,7 @@ const images = ref([
       "Non-profit organization dedicated to providing support and resources for underprivileged children.",
     category: "Non-Profit",
     featured: false,
-    link: "https://precioushopeforchildren.vercel.app",
+    link: "https://precioushopeforchildren.or.ke",
   },
 ]);
 

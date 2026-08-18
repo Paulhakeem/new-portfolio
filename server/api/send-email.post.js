@@ -1,6 +1,11 @@
 import nodemailer from "nodemailer";
 import { validate } from "email-validator";
-import DOMPurify from "isomorphic-dompurify";
+
+// Strip any HTML tags and trim — enough for plain text form fields
+function sanitizeText(input) {
+  if (typeof input !== "string") return "";
+  return input.replace(/<[^>]*>/g, "").trim();
+}
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
@@ -8,7 +13,6 @@ export default defineEventHandler(async (event) => {
 
   const { to, subject, text, name } = body;
 
-  // Validate required fields
   if (!to || !subject || !text || !name) {
     throw createError({
       statusCode: 400,
@@ -16,7 +20,6 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  // Validate email format
   if (!validate(to)) {
     throw createError({
       statusCode: 400,
@@ -24,10 +27,9 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  // Sanitize inputs
-  const sanitizedName = DOMPurify.sanitize(name);
-  const sanitizedSubject = DOMPurify.sanitize(subject);
-  const sanitizedText = DOMPurify.sanitize(text);
+  const sanitizedName = sanitizeText(name);
+  const sanitizedSubject = sanitizeText(subject);
+  const sanitizedText = sanitizeText(text);
 
   const smtpHost = config.smtpHost || "smtp.gmail.com";
   const smtpPort = Number(config.smtpPort) || 587;
@@ -39,7 +41,6 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  // Setup transporter
   const transporter = nodemailer.createTransport({
     host: smtpHost,
     port: smtpPort,
@@ -51,9 +52,9 @@ export default defineEventHandler(async (event) => {
   });
 
   const mailOptions = {
-    from: config.emailUsername, // Use your email as sender
-    replyTo: to, // User's email for replies
-    to: config.emailUsername, // Send to yourself
+    from: config.emailUsername,
+    replyTo: to,
+    to: config.emailUsername,
     subject: sanitizedSubject,
     text: `From: ${sanitizedName} <${to}>\n\n${sanitizedText}`,
   };
@@ -74,15 +75,12 @@ export default defineEventHandler(async (event) => {
   };
 
   try {
-    // Send the email
     const info = await transporter.sendMail(mailOptions);
-    // Send confirmation to user — don't fail if this errors
     try {
       await transporter.sendMail(confirmationMail);
     } catch (confirmError) {
       console.error("Confirmation email error:", confirmError);
     }
-
     return { success: true, info };
   } catch (error) {
     console.error("SendMail error:", error);

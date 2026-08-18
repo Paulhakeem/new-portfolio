@@ -29,7 +29,6 @@
     "dotenv": "^17.2.0",
     "email-validator": "^2.0.4",
     "embla-carousel-vue": "^8.6.0",
-    "isomorphic-dompurify": "^3.3.0",
     "lucide-vue-next": "^0.525.0",
     "nodemailer": "^7.0.5",
     "nuxt": "^3.17.5",

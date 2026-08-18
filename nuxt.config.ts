@@ -42,7 +42,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en",
       },
-      title: "Paul Nyamawi | UI Designer & Web Developer",
+      title: "Paul Nyamawi | Graphic Designer & Web Developer",
       titleTemplate: "%s | Paul Nyamawi",
       meta: [
         { charset: "utf-8" },
@@ -51,7 +51,7 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "Portfolio of Paul Nyamawi — UI designer and web developer crafting responsive, modern digital experiences with Vue.js, Nuxt, and user-focused design.",
+            "Portfolio of Paul Nyamawi — Graphic designer and web developer crafting responsive, modern digital experiences with Vue.js, Nuxt, and user-focused design.",
         },
         {
           name: "robots",
@@ -81,7 +81,7 @@ export default defineNuxtConfig({
         {
           property: "og:description",
           content:
-            "Portfolio of Paul Nyamawi — UI designer and web developer crafting responsive, modern digital experiences with Vue.js, Nuxt, and user-focused design.",
+            "Portfolio of Paul Nyamawi — Graphic designer and web developer crafting responsive, modern digital experiences with Vue.js, Nuxt, and user-focused design.",
         },
         {
           property: "og:image",
@@ -98,7 +98,7 @@ export default defineNuxtConfig({
         {
           name: "twitter:description",
           content:
-            "Portfolio of Paul Nyamawi — UI designer and web developer crafting responsive, modern digital experiences with Vue.js, Nuxt, and user-focused design.",
+            "Portfolio of Paul Nyamawi — Graphic designer and web developer crafting responsive, modern digital experiences with Vue.js, Nuxt, and user-focused design.",
         },
         {
           name: "twitter:image",

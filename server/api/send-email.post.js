@@ -29,9 +29,21 @@ export default defineEventHandler(async (event) => {
   const sanitizedSubject = DOMPurify.sanitize(subject);
   const sanitizedText = DOMPurify.sanitize(text);
 
+  const smtpHost = config.smtpHost || "smtp.gmail.com";
+  const smtpPort = Number(config.smtpPort) || 587;
+
+  if (!config.emailUsername || !config.emailPassword) {
+    throw createError({
+      statusCode: 500,
+      statusMessage: "SMTP email configuration is missing.",
+    });
+  }
+
   // Setup transporter
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: smtpHost,
+    port: smtpPort,
+    secure: smtpPort === 465,
     auth: {
       user: config.emailUsername,
       pass: config.emailPassword,

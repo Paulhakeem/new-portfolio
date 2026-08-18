@@ -93,7 +93,7 @@ export default defineNuxtConfig({
         },
         {
           name: "twitter:title",
-          content: "Paul Nyamawi | UI Designer & Web Developer",
+          content: "Paul Nyamawi | Graphic Designer & Web Developer",
         },
         {
           name: "twitter:description",
@@ -144,6 +144,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     emailUsername: process.env.EMAIL_USERNAME,
     emailPassword: process.env.EMAIL_PASSWORD,
+    smtpHost: process.env.SMTP_HOST,
+    smtpPort: process.env.SMTP_PORT,
     public: {
       siteUrl,
     },

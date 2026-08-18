@@ -236,16 +236,16 @@ const config = useRuntimeConfig();
 const siteUrl = config.public.siteUrl;
 
 useSeoMeta({
-  title: "Paul Nyamawi | UI Designer & Web Developer",
+  title: "Paul Nyamawi | Graphic Designer & Web Developer",
   description:
     "I design and build responsive, accessible digital experiences with Vue.js, Nuxt, and modern UI design for brands and startups.",
-  ogTitle: "Paul Nyamawi | UI Designer & Web Developer",
+  ogTitle: "Paul Nyamawi | Graphic Designer & Web Developer",
   ogDescription:
     "I design and build responsive, accessible digital experiences with Vue.js, Nuxt, and modern UI design for brands and startups.",
   ogUrl: siteUrl,
   ogImage: `${siteUrl}/images/profile.jpg`,
   twitterCard: "summary_large_image",
-  twitterTitle: "Paul Nyamawi | UI Designer & Web Developer",
+  twitterTitle: "Paul Nyamawi | Graphic Designer & Web Developer",
   twitterDescription:
     "I design and build responsive, accessible digital experiences with Vue.js, Nuxt, and modern UI design for brands and startups.",
   twitterImage: `${siteUrl}/images/profile.jpg`,
@@ -262,7 +262,7 @@ useHead({
         "@context": "https://schema.org",
         "@type": "Person",
         name: "Paul Nyamawi",
-        jobTitle: "UI Designer & Web Developer",
+        jobTitle: "Graphic Designer & Web Developer",
         url: siteUrl,
         image: `${siteUrl}/images/profile.jpg`,
         sameAs: [
@@ -271,7 +271,7 @@ useHead({
           "https://x.com/Hakeemi20",
         ],
         description:
-          "UI designer and web developer creating accessible, responsive user experiences with Vue.js and Nuxt.",
+          "Graphic Designer and web developer creating accessible, responsive user experiences with Vue.js and Nuxt.",
       }),
     },
   ],

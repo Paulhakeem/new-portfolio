@@ -99,6 +99,9 @@ importers:
         specifier: ^4.5.1
         version: 4.6.4(vue@3.5.35(typescript@5.9.3))
     devDependencies:
+      '@iconify-json/line-md':
+        specifier: ^1.2.16
+        version: 1.2.16
       '@iconify-json/tdesign':
         specifier: ^1.2.8
         version: 1.2.14
@@ -844,6 +847,9 @@ packages:
 
   '@iconify-json/devicon@1.2.62':
     resolution: {integrity: sha512-X0o0+fOJL2t5JTbDCGLRzrmvf8Pv5q8dr86+fW+F/VJ9qvXTtny6lqGIwjE9AY4VTLm3i8f/N+VtRheSW6OkEg==}
+
+  '@iconify-json/line-md@1.2.16':
+    resolution: {integrity: sha512-esHPUQUp30NyqJWa7MNu6ExdG8z/aEFC5r56rVyRGhtJ7acOme6YtYPnDOgVu6p+kk24rM8602xkFuBC6g6x+w==}
 
   '@iconify-json/tdesign@1.2.14':
     resolution: {integrity: sha512-cxiW56RvY4YxOgeyGAVQhoxynJgCYoskVjXYXVUv6B1dFjr6GYUnc59MPdh5P+LvrUlEOaiLOfsH3NYMQlsW/g==}
@@ -5372,6 +5378,10 @@ snapshots:
       - vue
 
   '@iconify-json/devicon@1.2.62':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/line-md@1.2.16':
     dependencies:
       '@iconify/types': 2.0.0
 

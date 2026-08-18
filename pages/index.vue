@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative min-h-screen overflow-hidden bg-background text-foreground dark:bg-slate-950 dark:text-white"
+    class="relative min-h-screen overflow-hidden bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white"
   >
     <!-- Background Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -232,47 +232,53 @@
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
+const siteUrl = config.public.siteUrl;
+
+useSeoMeta({
+  title: "Paul Nyamawi | UI Designer & Web Developer",
+  description:
+    "I design and build responsive, accessible digital experiences with Vue.js, Nuxt, and modern UI design for brands and startups.",
+  ogTitle: "Paul Nyamawi | UI Designer & Web Developer",
+  ogDescription:
+    "I design and build responsive, accessible digital experiences with Vue.js, Nuxt, and modern UI design for brands and startups.",
+  ogUrl: siteUrl,
+  ogImage: `${siteUrl}/images/profile.jpg`,
+  twitterCard: "summary_large_image",
+  twitterTitle: "Paul Nyamawi | UI Designer & Web Developer",
+  twitterDescription:
+    "I design and build responsive, accessible digital experiences with Vue.js, Nuxt, and modern UI design for brands and startups.",
+  twitterImage: `${siteUrl}/images/profile.jpg`,
+  robots: "index, follow",
+  author: "Paul Nyamawi",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: siteUrl }],
+  script: [
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Paul Nyamawi",
+        jobTitle: "UI Designer & Web Developer",
+        url: siteUrl,
+        image: `${siteUrl}/images/profile.jpg`,
+        sameAs: [
+          "https://github.com/Paulhakeem",
+          "https://www.linkedin.com/in/paul-nyamawi-9244b924b/",
+          "https://x.com/Hakeemi20",
+        ],
+        description:
+          "UI designer and web developer creating accessible, responsive user experiences with Vue.js and Nuxt.",
+      }),
+    },
+  ],
+});
+
 definePageMeta({
   title: "Home | Paul Nyamawi",
-  meta: [
-    {
-      name: "description",
-      content:
-        "I design and build delightful interfaces with Vue.js and Nuxt.js — accessible, responsive web experiences for modern brands.",
-    },
-    {
-      property: "og:title",
-      content: "Paul Nyamawi | UI Designer & Web Developer",
-    },
-    {
-      property: "og:description",
-      content:
-        "I design and build delightful interfaces with Vue.js and Nuxt.js — accessible, responsive web experiences for modern brands.",
-    },
-    {
-      property: "og:image",
-      content: "/images/profile.jpg",
-    },
-    {
-      name: "twitter:card",
-      content: "summary_large_image",
-    },
-    {
-      name: "twitter:title",
-      content: "Paul Nyamawi | UI Designer & Web Developer",
-    },
-    {
-      name: "twitter:description",
-      content:
-        "I design and build delightful interfaces with Vue.js and Nuxt.js — accessible, responsive web experiences for modern brands.",
-    },
-  ],
-  link: [
-    {
-      rel: "canonical",
-      href: "/",
-    },
-  ],
 });
 </script>
 

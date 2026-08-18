@@ -19,64 +19,66 @@
 <script setup>
 import { ref } from "vue";
 
+const config = useRuntimeConfig();
+const siteUrl = config.public.siteUrl;
+
+useSeoMeta({
+  title: "Graphics | Paul Nyamawi",
+  description:
+    "View graphic design work by Paul Nyamawi, including campaign visuals, brand styling, and modern digital art for online experiences.",
+  ogTitle: "Graphics | Paul Nyamawi",
+  ogDescription:
+    "View graphic design work by Paul Nyamawi, including campaign visuals, brand styling, and modern digital art for online experiences.",
+  ogUrl: `${siteUrl}/graphics`,
+  ogImage: `${siteUrl}/images/profile.jpg`,
+  twitterCard: "summary_large_image",
+  twitterTitle: "Graphics | Paul Nyamawi",
+  twitterDescription:
+    "View graphic design work by Paul Nyamawi, including campaign visuals, brand styling, and modern digital art for online experiences.",
+  twitterImage: `${siteUrl}/images/profile.jpg`,
+  robots: "index, follow",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: `${siteUrl}/graphics` }],
+});
+
 definePageMeta({
   title: "Graphics | Paul Nyamawi",
-  meta: [
-    {
-      name: "description",
-      content:
-        "A gallery of graphic design work by Paul Nyamawi, showcasing polished visuals and modern UI assets.",
-    },
-    {
-      property: "og:title",
-      content: "Graphics | Paul Nyamawi",
-    },
-    {
-      property: "og:description",
-      content:
-        "A gallery of graphic design work by Paul Nyamawi, showcasing polished visuals and modern UI assets.",
-    },
-  ],
-  link: [
-    {
-      rel: "canonical",
-      href: "/graphics",
-    },
-  ],
 });
 
 const photos = ref([
   {
     src: "/photos/bnb.png",
-    alt: "Gallery Image",
+    alt: "Paul Nyamawi vacation promotional graphic design",
   },
   {
     src: "/photos/Apartment.png",
-    alt: "Gallery Image",
+    alt: "Modern apartment branding and property marketing artwork",
   },
   {
     src: "/photos/confirm.png",
-    alt: "Gallery Image",
+    alt: "Confirmation design mockup for a digital booking experience",
   },
   {
     src: "/photos/holiday.png",
-    alt: "Gallery Image",
+    alt: "Holiday campaign graphic for travel and promotions",
   },
   {
     src: "/photos/jamhuri.png",
-    alt: "Gallery Image",
+    alt: "Jamhuri celebration poster design by Paul Nyamawi",
   },
   {
     src: "/photos/year.png",
-    alt: "Gallery Image",
+    alt: "Year end marketing banner design and event poster",
   },
   {
     src: "/photos/offer.png",
-    alt: "Gallery Image",
+    alt: "Special offer promotional artwork for digital marketing",
   },
   {
     src: "/photos/valentines.png",
-    alt: "Gallery Image",
+    alt: "Valentines day promotional visual created by Paul Nyamawi",
   },
 ]);
 </script>

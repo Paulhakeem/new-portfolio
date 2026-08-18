@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
 
-const siteUrl = process.env.SITE_URL || "http://localhost:3000";
+const siteUrl =
+  process.env.SITE_URL ||
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000");
 const isProd = process.env.NODE_ENV === "production";
 
 const cspDirectives = [
@@ -43,10 +47,16 @@ export default defineNuxtConfig({
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "author", content: "Paul Nyamawi" },
         {
           name: "description",
           content:
-            "Portfolio of Paul Nyamawi — crafted UI and web experiences with Vue.js, Nuxt, and modern design.",
+            "Portfolio of Paul Nyamawi — UI designer and web developer crafting responsive, modern digital experiences with Vue.js, Nuxt, and user-focused design.",
+        },
+        {
+          name: "robots",
+          content:
+            "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
         },
         {
           name: "theme-color",
@@ -57,13 +67,21 @@ export default defineNuxtConfig({
           content: "website",
         },
         {
+          property: "og:url",
+          content: siteUrl,
+        },
+        {
+          property: "og:locale",
+          content: "en_US",
+        },
+        {
           property: "og:site_name",
           content: "Paul Nyamawi Portfolio",
         },
         {
           property: "og:description",
           content:
-            "Portfolio of Paul Nyamawi — crafted UI and web experiences with Vue.js, Nuxt, and modern design.",
+            "Portfolio of Paul Nyamawi — UI designer and web developer crafting responsive, modern digital experiences with Vue.js, Nuxt, and user-focused design.",
         },
         {
           property: "og:image",
@@ -80,14 +98,17 @@ export default defineNuxtConfig({
         {
           name: "twitter:description",
           content:
-            "Portfolio of Paul Nyamawi — crafted UI and web experiences with Vue.js, Nuxt, and modern design.",
+            "Portfolio of Paul Nyamawi — UI designer and web developer crafting responsive, modern digital experiences with Vue.js, Nuxt, and user-focused design.",
         },
         {
           name: "twitter:image",
           content: `${siteUrl}/images/profile.jpg`,
         },
       ],
-      link: [{ rel: "icon", href: "/favicon.ico" }],
+      link: [
+        { rel: "icon", href: "/favicon.ico" },
+        { rel: "canonical", href: siteUrl },
+      ],
     },
   },
   css: ["~/assets/css/index.css"],
@@ -95,6 +116,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   modules: [
+    "@nuxtjs/color-mode",
     "@nuxt/ui",
     "shadcn-nuxt",
     "@nuxt/icon",

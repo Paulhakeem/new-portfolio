@@ -219,30 +219,32 @@
 <script setup>
 import { ref, computed } from "vue";
 
+const config = useRuntimeConfig();
+const siteUrl = config.public.siteUrl;
+
+useSeoMeta({
+  title: "Projects | Paul Nyamawi",
+  description:
+    "Explore Paul Nyamawi's portfolio of web apps, dashboards, brand experiences, and modern user interfaces built with Vue.js and Nuxt.",
+  ogTitle: "Projects | Paul Nyamawi",
+  ogDescription:
+    "Explore Paul Nyamawi's portfolio of web apps, dashboards, brand experiences, and modern user interfaces built with Vue.js and Nuxt.",
+  ogUrl: `${siteUrl}/projects`,
+  ogImage: `${siteUrl}/images/profile.jpg`,
+  twitterCard: "summary_large_image",
+  twitterTitle: "Projects | Paul Nyamawi",
+  twitterDescription:
+    "Explore Paul Nyamawi's portfolio of web apps, dashboards, brand experiences, and modern user interfaces built with Vue.js and Nuxt.",
+  twitterImage: `${siteUrl}/images/profile.jpg`,
+  robots: "index, follow",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: `${siteUrl}/projects` }],
+});
+
 definePageMeta({
   title: "Projects | Paul Nyamawi",
-  meta: [
-    {
-      name: "description",
-      content:
-        "Explore portfolio projects by Paul Nyamawi, with case studies for web apps, dashboards, and interactive UI work.",
-    },
-    {
-      property: "og:title",
-      content: "Projects | Paul Nyamawi",
-    },
-    {
-      property: "og:description",
-      content:
-        "Explore portfolio projects by Paul Nyamawi, with case studies for web apps, dashboards, and interactive UI work.",
-    },
-  ],
-  link: [
-    {
-      rel: "canonical",
-      href: "/projects",
-    },
-  ],
 });
 
 const activeFilter = ref("all");

@@ -2,22 +2,40 @@
   <div class="sticky top-0 z-50">
     <!-- Mobile Header -->
     <div
-      class="flex md:hidden lg:hidden items-center justify-between px-4 py-3 bg-gradient-to-r from-[#192030] to-[#1a2a3a] border-b border-gray-700/30 shadow-lg"
+      class="flex md:hidden lg:hidden items-center justify-between px-4 py-3 bg-white/80 dark:bg-gradient-to-r dark:from-[#192030] dark:to-[#1a2a3a] border-b border-slate-200/80 dark:border-gray-700/30 shadow-lg backdrop-blur-sm"
     >
       <div class="flex items-center gap-2">
         <Icon name="mynaui:bubbles-solid" class="text-[#ff4b57] text-lg" />
-        <p class="font-bold text-gray-200 text-sm">Paul</p>
+        <p class="font-bold text-slate-800 dark:text-gray-200 text-sm">Paul</p>
       </div>
-      <button
-        @click="openCloseSidebar"
-        class="p-2 text-gray-300 hover:text-[#ff4b57] transition-colors duration-300"
-        aria-label="Toggle menu"
-      >
-        <Icon
-          :name="open ? 'material-symbols:close' : 'material-symbols:menu'"
-          size="24"
-        />
-      </button>
+      <div class="flex items-center gap-2">
+        <button
+          @click="toggleTheme"
+          class="p-2 rounded-full bg-slate-100 text-slate-700 hover:text-[#ff4b57] dark:bg-slate-800 dark:text-slate-200 transition-colors duration-300"
+          :aria-label="
+            colorMode.value === 'dark'
+              ? 'Switch to light mode'
+              : 'Switch to dark mode'
+          "
+        >
+          <Icon
+            :name="
+              colorMode.value === 'dark' ? 'line-md:sun' : 'line-md:moon-filled'
+            "
+            size="18"
+          />
+        </button>
+        <button
+          @click="openCloseSidebar"
+          class="p-2 text-slate-700 dark:text-gray-300 hover:text-[#ff4b57] transition-colors duration-300"
+          aria-label="Toggle menu"
+        >
+          <Icon
+            :name="open ? 'material-symbols:close' : 'material-symbols:menu'"
+            size="24"
+          />
+        </button>
+      </div>
     </div>
 
     <!-- Mobile Menu Overlay -->
@@ -47,18 +65,20 @@
     >
       <div
         v-if="open"
-        class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-b from-[#192030] to-[#0f1620] z-50 shadow-2xl flex flex-col overflow-y-auto"
+        class="fixed left-0 top-0 h-screen w-64 bg-white/95 dark:bg-gradient-to-b dark:from-[#192030] dark:to-[#0f1620] z-50 shadow-2xl flex flex-col overflow-y-auto border-r border-slate-200 dark:border-gray-700/30"
       >
         <div
-          class="flex items-center justify-between p-4 border-b border-gray-700/30"
+          class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-gray-700/30"
         >
           <div class="flex items-center gap-2">
             <Icon name="mynaui:bubbles-solid" class="text-[#ff4b57] text-lg" />
-            <span class="font-bold text-gray-200">Paul</span>
+            <span class="font-bold text-slate-800 dark:text-gray-200"
+              >Paul</span
+            >
           </div>
           <button
             @click="openCloseSidebar"
-            class="p-1 text-gray-400 hover:text-gray-200 transition-colors"
+            class="p-1 text-slate-500 hover:text-slate-900 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
           >
             <Icon name="material-symbols:close" size="20" />
           </button>
@@ -69,7 +89,7 @@
             v-for="item in menu"
             :key="item.name"
             :to="item.path"
-            class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:text-[#ff4b57] hover:bg-gray-800/50 transition-all duration-200 group"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 dark:text-gray-300 hover:text-[#ff4b57] hover:bg-slate-100 dark:hover:bg-gray-800/50 transition-all duration-200 group"
             @click="openCloseSidebar"
           >
             <Icon
@@ -85,7 +105,7 @@
 
     <!-- Desktop Navigation -->
     <div
-      class="hidden md:flex lg:flex w-full bg-gradient-to-r from-[#192030] to-[#1a2a3a] border-b border-gray-700/30"
+      class="hidden md:flex lg:flex w-full bg-white/80 dark:bg-gradient-to-r dark:from-[#192030] dark:to-[#1a2a3a] border-b border-slate-200/80 dark:border-gray-700/30 backdrop-blur-sm"
     >
       <SidebarMenu />
     </div>
@@ -95,6 +115,7 @@
 <script setup>
 import { ref } from "vue";
 
+const colorMode = useColorMode();
 const open = ref(false);
 const menu = [
   { name: "Home", path: "/", icon: "material-symbols:home-outline" },
@@ -112,5 +133,9 @@ const menu = [
 
 const openCloseSidebar = () => {
   open.value = !open.value;
+};
+
+const toggleTheme = () => {
+  colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
 };
 </script>

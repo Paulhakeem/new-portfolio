@@ -370,8 +370,6 @@
                   Prefer email? I'll reply within 48 hours.
                 </p>
 
-                <!-- Using native <button type="submit"> + @submit.prevent on -->
-                <!-- the form is the most reliable approach — no shadcn quirks -->
                 <button
                   type="submit"
                   :disabled="loading"

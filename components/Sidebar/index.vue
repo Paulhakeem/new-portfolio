@@ -29,7 +29,7 @@
         :aria-label="open ? 'Close navigation menu' : 'Open navigation menu'"
         @click="open = !open"
       >
-        <Icon :name="open ? 'lucide:x' : 'lucide:menu'" size="21" />
+        <component :is="open ? X : Menu" :size="21" />
       </button>
     </div>
 
@@ -61,6 +61,7 @@
 
 <script setup>
 import { ref, watch } from "vue";
+import { Menu, X } from "lucide-vue-next";
 
 const route = useRoute();
 const open = ref(false);

@@ -255,7 +255,7 @@ const images = ref([
     src: "/images/skywork.png",
     alt: "AI",
     description:
-      "Advanced AI workspace platform with intuitive collaboration tools and real-time features.",
+      "Printing, branding, and design agency website with portfolio showcase and client testimonials.",
     category: "Web App",
     featured: true,
     link: "https://skywork.vercel.app/",
@@ -414,7 +414,13 @@ const filteredImages = computed(() => {
   color: #20231f;
 }
 
-.projects-page .bg-gradient-to-r.from-\[\#ff4b57\] {
+.projects-page .text-pink-400,
+.projects-page .text-purple-400 {
+  color: #bf4a38;
+}
+
+.projects-page button.bg-gradient-to-r.from-\[\#ff4b57\],
+.projects-page .project-card .bg-gradient-to-r.from-\[\#ff4b57\] {
   background-image: linear-gradient(110deg, #bf4a38, #d1745d);
 }
 

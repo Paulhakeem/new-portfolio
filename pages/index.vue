@@ -8,9 +8,7 @@
           <em>Useful</em> technology.
         </h1>
         <p class="home-hero__intro">
-          I’m Paul, a graphic designer and web developer in Mombasa. I bring
-          good ideas to life through considered visuals and accessible digital
-          experiences.
+          I am Full Stack Web Developer and Graphic Designer, passionate about creating digital experiences that are not only visually appealing but also functional and user-friendly. I specialize in building responsive websites and applications using modern technologies like Vue.js and Nuxt, while also crafting compelling visual designs that resonate with audiences.s
         </p>
         <div class="home-hero__actions">
           <a class="home-button home-button--primary" href="#projects">
@@ -47,12 +45,11 @@
           <span class="home-caption-index">01 / 03</span>
           <span>Designing with purpose, building with care.</span>
         </div>
-        <span class="home-hero__stamp" aria-hidden="true">Made in<br />Mombasa</span>
       </div>
     </section>
 
     <section class="home-intro-strip" aria-label="About my work">
-      <span>Visual identity</span><i></i><span>Digital products</span><i></i><span>Front-end development</span><i></i><span>Based in Kenya</span>
+      <span>Web development</span><i></i><span>Graphic design</span><i></i><span>Social media marketing</span>
     </section>
 
     <section class="home-section home-skills" aria-labelledby="expertise-heading">

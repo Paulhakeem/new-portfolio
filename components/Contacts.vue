@@ -2,19 +2,6 @@
   <section
     class="editorial-contact py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
   >
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div
-        class="absolute top-10 left-4 sm:top-20 sm:left-20 w-24 h-24 sm:w-40 sm:h-40 bg-gradient-to-r from-[#ff4b57]/8 to-purple-500/8 rounded-full blur-2xl sm:blur-3xl animate-pulse"
-      ></div>
-      <div
-        class="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-r from-blue-500/6 to-[#ff4b57]/6 rounded-full blur-xl sm:blur-2xl animate-pulse animation-delay-2000"
-      ></div>
-      <div
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-r from-pink-400/5 to-cyan-400/5 rounded-full blur-lg sm:blur-xl animate-pulse animation-delay-1000"
-      ></div>
-    </div>
-
     <div class="relative z-10 max-w-7xl mx-auto">
       <!-- Section Header -->
       <div class="text-center mb-12 sm:mb-16 animate-fade-in">
@@ -380,10 +367,7 @@
                     Sending...
                   </span>
                   <span v-else class="flex items-center gap-2">
-                    <Icon
-                      name="line-md:send-filled"
-                      class="w-4 h-4 sm:w-5 sm:h-5"
-                    />
+                    <Send class="w-4 h-4 sm:w-5 sm:h-5" />
                     Send Message
                   </span>
                 </button>
@@ -399,7 +383,7 @@
 <script setup>
 import { ref, reactive } from "vue";
 import { useAlert } from "@/composables/useAlert";
-import { LoaderCircle } from "lucide-vue-next";
+import { LoaderCircle, Send } from "lucide-vue-next";
 
 const { showSuccess, showError } = useAlert();
 const loading = ref(false);

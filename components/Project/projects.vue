@@ -1,15 +1,5 @@
 <template>
   <section id="projects" class="featured-work py-20 relative overflow-hidden">
-    <!-- Animated background gradient -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div
-        class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-[#ff4b57]/20 to-pink-400/20 rounded-full blur-3xl animate-pulse"
-      ></div>
-      <div
-        class="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"
-      ></div>
-    </div>
-
     <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Section Title -->
       <div class="text-center mb-16 animate-fade-in">
@@ -352,7 +342,8 @@ const images = ref([
   background: #ece7de;
 }
 
-.featured-work .bg-gradient-to-r.from-\[\#ff4b57\] {
+.featured-work button.bg-gradient-to-r.from-\[\#ff4b57\],
+.featured-work .project-card .bg-gradient-to-r.from-\[\#ff4b57\] {
   background-image: linear-gradient(110deg, #bf4a38, #d1745d);
 }
 

@@ -1,16 +1,17 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-br from-[#0f1724] via-[#23253a] to-[#121426] flex items-center justify-center"
+    class="min-h-[70vh] bg-[#f6f3ed] flex items-center justify-center px-6 py-24"
   >
     <div class="text-center">
-      <h1 class="text-6xl font-bold text-[#ff4b57] mb-4">404</h1>
-      <h2 class="text-2xl font-semibold text-gray-300 mb-8">Page Not Found</h2>
-      <p class="text-gray-400 mb-8">
+      <p class="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#bf4a38]">A little off course</p>
+      <h1 class="mb-4 font-serif text-7xl font-normal tracking-tight text-[#20231f]">404</h1>
+      <h2 class="mb-3 text-xl font-semibold text-[#20231f]">Page not found</h2>
+      <p class="mb-8 text-[#716f67]">
         The page you're looking for doesn't exist.
       </p>
       <NuxtLink
         to="/"
-        class="inline-block px-6 py-4 bg-[#ff4b57] text-white rounded-lg hover:bg-[#e63946] transition-colors min-h-[44px] text-base"
+        class="inline-flex min-h-[48px] items-center rounded-full bg-[#bf4a38] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#a83b2b]"
       >
         Go Home
       </NuxtLink>

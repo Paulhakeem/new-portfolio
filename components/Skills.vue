@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  <section class="editorial-skills py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
     <!-- Background Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div
@@ -262,6 +262,59 @@ const toolSkills = ref([
 </script>
 
 <style scoped>
+.editorial-skills h2,
+.editorial-skills h3,
+.editorial-skills .skill-name {
+  color: #20231f;
+}
+
+.editorial-skills h2 span:first-child {
+  color: #bf4a38;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.editorial-skills h2 span:last-child {
+  color: #20231f;
+}
+
+.editorial-skills h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+}
+
+.editorial-skills p {
+  color: #716f67;
+}
+
+.editorial-skills .skill-content {
+  border-color: #e6e0d6;
+  border-radius: 0.9rem;
+  background: #fffdfa;
+  box-shadow: 0 8px 26px rgba(32, 35, 31, 0.04);
+}
+
+.editorial-skills .skill-card:hover .skill-content {
+  border-color: rgba(191, 74, 56, 0.4);
+  box-shadow: 0 16px 34px rgba(32, 35, 31, 0.08);
+}
+
+.editorial-skills .icon-wrapper {
+  border-radius: 1rem;
+  background: #f7e9e3;
+}
+
+.editorial-skills .skill-icon {
+  color: #bf4a38;
+  filter: none;
+}
+
+.editorial-skills .skill-card:hover .skill-icon {
+  color: #a83b2b;
+  filter: none;
+}
+
 /* Custom animations */
 @keyframes fade-in {
   from {

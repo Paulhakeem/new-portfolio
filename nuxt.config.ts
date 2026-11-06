@@ -60,7 +60,7 @@ export default defineNuxtConfig({
         },
         {
           name: "theme-color",
-          content: "#0f1724",
+          content: "#f6f3ed",
         },
         {
           property: "og:type",
@@ -116,7 +116,6 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   modules: [
-    "@nuxtjs/color-mode",
     "@nuxt/ui",
     "shadcn-nuxt",
     "@nuxt/icon",
@@ -126,15 +125,9 @@ export default defineNuxtConfig({
     "@vercel/analytics",
   ],
 
-  colorMode: {
-    classSuffix: "",
-    preference: "system",
-    fallback: "light",
-  },
-
   // @nuxt/ui config
   ui: {
-    colorMode: true,
+    colorMode: false,
   },
 
   shadcn: {

@@ -1,6 +1,6 @@
 <template>
   <section
-    class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+    class="editorial-contact py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
   >
     <!-- Background Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -462,6 +462,86 @@ const send = async () => {
 </script>
 
 <style>
+.editorial-contact h2,
+.editorial-contact h3,
+.editorial-contact label {
+  color: #20231f;
+}
+
+.editorial-contact h2 span:first-child {
+  color: #bf4a38;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.editorial-contact h2 span:last-child {
+  color: #20231f;
+}
+
+.editorial-contact p,
+.editorial-contact label {
+  color: #716f67;
+}
+
+.editorial-contact .backdrop-blur-xl,
+.editorial-contact form,
+.editorial-contact form input,
+.editorial-contact form textarea {
+  color: #20231f;
+}
+
+.editorial-contact .backdrop-blur-xl {
+  border-color: #e2dacf;
+  border-radius: 1rem;
+  background: #fffdfa;
+  box-shadow: 0 10px 32px rgba(32, 35, 31, 0.05);
+}
+
+.editorial-contact form input,
+.editorial-contact form textarea {
+  border-color: #ded8ce;
+  background: #fbf9f5;
+}
+
+.editorial-contact form input::placeholder,
+.editorial-contact form textarea::placeholder {
+  color: #9a968d;
+}
+
+.editorial-contact form input:focus,
+.editorial-contact form textarea:focus {
+  border-color: #bf4a38;
+  outline-color: #bf4a38;
+}
+
+.editorial-contact a.text-white,
+.editorial-contact p.text-white {
+  color: #20231f;
+}
+
+.editorial-contact .text-gray-300,
+.editorial-contact .text-gray-400 {
+  color: #716f67;
+}
+
+.editorial-contact .bg-white\/5 {
+  border-color: #e8e2d9;
+  background: #f8f5ef;
+}
+
+.editorial-contact .border-white\/10,
+.editorial-contact .border-white\/10:hover {
+  border-color: #e2dacf;
+}
+
+.editorial-contact .text-\[\#ff4b57\] {
+  color: #bf4a38;
+}
+
+.editorial-contact .bg-gradient-to-r {
+  background-image: linear-gradient(110deg, #bf4a38, #d1745d);
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;

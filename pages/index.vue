@@ -1,233 +1,71 @@
 <template>
-  <div
-    class="relative min-h-screen overflow-hidden bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white"
-  >
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <!-- Primary gradient background -->
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
-      ></div>
-
-      <!-- Animated orbs -->
-      <div
-        class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-[#ff4b57]/20 to-pink-400/20 rounded-full blur-3xl animate-pulse"
-      ></div>
-      <div
-        class="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"
-      ></div>
-      <div
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-gradient-to-r from-[#ff4b57]/5 to-transparent rounded-full blur-3xl"
-      ></div>
-
-      <!-- Subtle grid pattern overlay -->
-      <div class="absolute inset-0 opacity-20">
-        <div
-          class="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.03)_1px,transparent_0)] bg-[length:30px_30px]"
-        ></div>
-      </div>
-    </div>
-    <div class="relative z-10">
-      <!-- Hero Section -->
-      <section
-        class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
-      >
-        <div class="max-w-7xl mx-auto w-full">
-          <div
-            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
-          >
-            <!-- Left Content -->
-            <div class="order-2 lg:order-1 text-center lg:text-left space-y-8">
-              <!-- Greeting Badge -->
-              <div class="inline-block animate-fade-in">
-                <span
-                  class="px-4 py-2 text-sm font-semibold text-[#ff4b57] bg-[#ff4b57]/10 rounded-full border border-[#ff4b57]/20"
-                >
-                  👋 Hello, I'm Paul
-                </span>
-              </div>
-
-              <!-- Main Heading -->
-              <div class="space-y-4 animate-fade-in-up">
-                <h1
-                  class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
-                >
-                  <span class="text-slate-950 dark:text-white"
-                    >I design & build</span
-                  >
-                  <br />
-                  <span
-                    class="bg-gradient-to-r from-[#ff4b57] via-pink-400 to-[#ff6b77] bg-clip-text text-transparent"
-                  >
-                    delightful interfaces
-                  </span>
-                </h1>
-              </div>
-
-              <!-- Description -->
-              <div
-                class="max-w-xl mx-auto lg:mx-0 animate-fade-in-up animation-delay-200"
-              >
-                <p
-                  class="text-slate-700 dark:text-gray-300 text-lg sm:text-xl leading-relaxed"
-                >
-                  I'm a
-                  <span class="text-[#ff4b57] font-semibold"
-                    >Graphic Designer</span
-                  >
-                  and
-                  <span class="text-[#ff4b57] font-semibold"
-                    >Web Developer</span
-                  >
-                  focused on building accessible, responsive user experiences
-                  with Vue.js and Nuxt.js.
-                </p>
-                <p class="text-slate-500 dark:text-gray-400 text-base mt-4">
-                  I combine visual craft with practical engineering to ship
-                  polished products that users love.
-                </p>
-              </div>
-
-              <!-- CTA Buttons -->
-              <div
-                class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-400"
-              >
-                <a href="mailto:paulnyamawi18@gmail.com">
-                  <button
-                    class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#ff4b57] to-pink-400 text-white font-bold rounded-full hover:shadow-lg hover:shadow-[#ff4b57]/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 min-h-[56px]"
-                  >
-                    <Icon name="ri:mail-line" size="24" class="text-white" />
-                    Let's Connect
-                  </button>
-                </a>
-
-                <a href="#projects" class="group">
-                  <button
-                    class="w-full sm:w-auto px-8 py-4 border-2 border-[#ff4b57]/50 text-[#ff4b57] hover:bg-[#ff4b57] hover:text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 min-h-[56px]"
-                  >
-                    View Projects
-                    <Icon
-                      name="ri:arrow-right-line"
-                      size="24"
-                      class="group-hover:translate-x-1 transition-transform"
-                    />
-                  </button>
-                </a>
-              </div>
-
-              <!-- Social Links -->
-              <div
-                class="flex justify-center lg:justify-start gap-6 pt-8 animate-fade-in-up animation-delay-600"
-              >
-                <a
-                  href="https://github.com/Paulhakeem"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="group p-3 bg-slate-100/80 dark:bg-white/5 hover:bg-[#ff4b57]/20 border border-slate-200/60 dark:border-white/10 hover:border-[#ff4b57]/50 rounded-full transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
-                  aria-label="GitHub"
-                >
-                  <Icon
-                    name="ant-design:github-filled"
-                    class="size-6 text-slate-500 dark:text-gray-400 group-hover:text-white transition-colors"
-                  />
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/paul-nyamawi-9244b924b/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="group p-3 bg-slate-100/80 dark:bg-white/5 hover:bg-[#ff4b57]/20 border border-slate-200/60 dark:border-white/10 hover:border-[#ff4b57]/50 rounded-full transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
-                  aria-label="LinkedIn"
-                >
-                  <Icon
-                    name="ant-design:linkedin-filled"
-                    class="size-6 text-slate-500 dark:text-gray-400 group-hover:text-white transition-colors"
-                  />
-                </a>
-
-                <a
-                  href="https://x.com/Hakeemi20"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="group p-3 bg-slate-100/80 dark:bg-white/5 hover:bg-[#ff4b57]/20 border border-slate-200/60 dark:border-white/10 hover:border-[#ff4b57]/50 rounded-full transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
-                  aria-label="Twitter"
-                >
-                  <Icon
-                    name="prime:twitter"
-                    class="size-6 text-slate-500 dark:text-gray-400 group-hover:text-white transition-colors"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <!-- Right Content - Profile Image -->
-            <div
-              class="order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in-up animation-delay-300"
-            >
-              <div class="relative">
-                <!-- Glow Effects -->
-                <div
-                  class="absolute inset-0 rounded-full blur-3xl opacity-30 bg-gradient-to-r from-[#ff4b57] via-pink-400 to-purple-500 animate-pulse"
-                ></div>
-                <div
-                  class="absolute inset-0 rounded-full blur-2xl opacity-20 bg-gradient-to-r from-[#ff4b57] to-[#ff6b77] animate-gradient-x"
-                ></div>
-
-                <!-- Profile Image Container -->
-                <div
-                  class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden ring-4 ring-[#ff4b57]/50 shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-[#ff4b57]/30"
-                >
-                  <img
-                    src="/images/profile.jpg"
-                    alt="Paul Nyamawi - Graphic Designer & Front-End Developer"
-                    class="w-full h-full object-cover"
-                    width="800"
-                    height="800"
-                    format="webp"
-                    quality="80"
-                    sizes="(max-width: 1024px) 70vw, 32rem"
-                    loading="eager"
-                  />
-
-                  <!-- Overlay gradient -->
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
-                  ></div>
-                </div>
-
-                <!-- Floating elements -->
-                <div
-                  class="absolute -top-4 -right-4 w-8 h-8 bg-[#ff4b57] rounded-full animate-bounce"
-                ></div>
-                <div
-                  class="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-400 rounded-full animate-bounce animation-delay-1000"
-                ></div>
-                <div
-                  class="absolute top-1/2 -left-8 w-4 h-4 bg-purple-400 rounded-full animate-bounce animation-delay-500"
-                ></div>
-              </div>
-            </div>
+  <div class="home-page">
+    <section class="home-hero">
+      <div class="home-hero__copy">
+        <p class="home-kicker"><span></span> Independent designer & developer</p>
+        <h1>
+          Thoughtful design.<br />
+          <em>Useful</em> technology.
+        </h1>
+        <p class="home-hero__intro">
+          I’m Paul, a graphic designer and web developer in Mombasa. I bring
+          good ideas to life through considered visuals and accessible digital
+          experiences.
+        </p>
+        <div class="home-hero__actions">
+          <a class="home-button home-button--primary" href="#projects">
+            Explore my work <span aria-hidden="true">↗</span>
+          </a>
+          <a class="home-button home-button--quiet" href="mailto:paulnyamawi18@gmail.com">
+            Start a conversation
+          </a>
+        </div>
+        <div class="home-hero__meta">
+          <div class="home-hero__availability">
+            <span class="home-availability-dot"></span>
+            Available for select projects
+          </div>
+          <div class="home-hero__socials" aria-label="Social profiles">
+            <a href="https://github.com/Paulhakeem" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/paul-nyamawi-9244b924b/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="https://x.com/Hakeemi20" target="_blank" rel="noopener noreferrer">X ↗</a>
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- Skills Section -->
-      <section class="py-20 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-6xl mx-auto">
-          <Skills />
+      <div class="home-hero__visual">
+        <div class="home-portrait-frame">
+          <img
+            src="/images/profile.jpg"
+            alt="Paul Nyamawi, graphic designer and web developer"
+            width="800"
+            height="800"
+            fetchpriority="high"
+          />
         </div>
-      </section>
+        <div class="home-portrait-caption">
+          <span class="home-caption-index">01 / 03</span>
+          <span>Designing with purpose, building with care.</span>
+        </div>
+        <span class="home-hero__stamp" aria-hidden="true">Made in<br />Mombasa</span>
+      </div>
+    </section>
 
-      <!-- Projects Section -->
-      <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8">
-        <ProjectProjects />
-      </section>
+    <section class="home-intro-strip" aria-label="About my work">
+      <span>Visual identity</span><i></i><span>Digital products</span><i></i><span>Front-end development</span><i></i><span>Based in Kenya</span>
+    </section>
 
-      <!-- Contact Section -->
-      <section class="py-20 px-4 sm:px-6 lg:px-8">
-        <Contacts />
-      </section>
-    </div>
+    <section class="home-section home-skills" aria-labelledby="expertise-heading">
+      <Skills />
+    </section>
+
+    <section id="projects" class="home-section home-projects">
+      <ProjectProjects />
+    </section>
+
+    <section id="contact" class="home-section home-contact">
+      <Contacts />
+    </section>
   </div>
 </template>
 
@@ -283,159 +121,272 @@ definePageMeta({
 </script>
 
 <style scoped>
-/* Custom animations */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.home-page {
+  color: #20231f;
 }
 
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: center;
+  width: min(1200px, calc(100% - 3rem));
+  min-height: min(760px, calc(100svh - 76px));
+  margin: 0 auto;
+  padding: 5rem 0 6rem;
 }
 
-@keyframes gradient-x {
-  0%,
-  100% {
-    transform: translateX(-50%);
-  }
-  50% {
-    transform: translateX(50%);
-  }
+.home-kicker,
+.home-caption-index {
+  color: #bf4a38;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out;
+.home-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
 }
 
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out;
+.home-kicker span,
+.home-availability-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #bf4a38;
 }
 
-.animation-delay-200 {
-  animation-delay: 0.2s;
+.home-hero h1 {
+  margin: 1.5rem 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.2rem, 6.8vw, 6.2rem);
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  line-height: 0.99;
 }
 
-.animation-delay-300 {
-  animation-delay: 0.3s;
+.home-hero h1 em {
+  color: #bf4a38;
+  font-weight: 400;
 }
 
-.animation-delay-400 {
-  animation-delay: 0.4s;
+.home-hero__intro {
+  max-width: 35rem;
+  color: #716f67;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.8;
 }
 
-.animation-delay-500 {
-  animation-delay: 0.5s;
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.animation-delay-600 {
-  animation-delay: 0.6s;
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 48px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 160ms ease, background 160ms ease;
 }
 
-.animation-delay-1000 {
-  animation-delay: 1s;
-}
-
-.animate-gradient-x {
-  animation: gradient-x 3s ease infinite;
-}
-
-/* Responsive typography adjustments */
-@media (max-width: 640px) {
-  .text-4xl {
-    font-size: 2.5rem;
-    line-height: 1.1;
-  }
-
-  .text-5xl {
-    font-size: 3rem;
-    line-height: 1.1;
-  }
-}
-
-@media (max-width: 480px) {
-  .text-4xl {
-    font-size: 2.25rem;
-  }
-
-  .text-5xl {
-    font-size: 2.75rem;
-  }
-
-  .text-6xl {
-    font-size: 3.25rem;
-  }
-}
-
-/* Enhanced button hover effects */
-button:hover {
-  box-shadow: 0 10px 25px rgba(255, 75, 87, 0.3);
-}
-
-/* Social link hover effects */
-a:hover {
+.home-button:hover {
   transform: translateY(-2px);
 }
 
-/* Profile image responsive sizing */
-@media (max-width: 1024px) {
-  .w-64,
-  .h-64 {
-    width: 18rem;
-    height: 18rem;
+.home-button--primary {
+  padding: 0 1.3rem;
+  border-radius: 999px;
+  background: #bf4a38;
+  color: #fffdfa;
+}
+
+.home-button--primary:hover {
+  background: #a83b2b;
+}
+
+.home-button--quiet {
+  color: #20231f;
+}
+
+.home-button--quiet:hover {
+  color: #bf4a38;
+}
+
+.home-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-top: 4rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #ded8ce;
+  color: #716f67;
+  font-size: 0.74rem;
+}
+
+.home-hero__availability,
+.home-hero__socials {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.home-availability-dot {
+  background: #69815c;
+  box-shadow: 0 0 0 4px rgba(105, 129, 92, 0.14);
+}
+
+.home-hero__socials {
+  gap: 1rem;
+}
+
+.home-hero__socials a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.home-hero__socials a:hover {
+  color: #bf4a38;
+}
+
+.home-hero__visual {
+  position: relative;
+  max-width: 460px;
+  justify-self: end;
+}
+
+.home-portrait-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 0.83;
+  background: #e8dfd3;
+  box-shadow: 20px 20px 0 #e8dfd3;
+}
+
+.home-portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.82);
+}
+
+.home-portrait-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  color: #716f67;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+.home-hero__stamp {
+  position: absolute;
+  right: -2.6rem;
+  top: 3rem;
+  display: grid;
+  width: 92px;
+  height: 92px;
+  place-content: center;
+  border: 1px solid #bf4a38;
+  border-radius: 50%;
+  background: #f6f3ed;
+  color: #bf4a38;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.85rem;
+  line-height: 1.15;
+  text-align: center;
+  transform: rotate(9deg);
+}
+
+.home-intro-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.3rem 1rem;
+  border-top: 1px solid #ded8ce;
+  border-bottom: 1px solid #ded8ce;
+  background: #f0ece4;
+  color: #716f67;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.home-intro-strip i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #bf4a38;
+}
+
+.home-section {
+  padding: clamp(4rem, 8vw, 7rem) max(1.5rem, calc((100vw - 1200px) / 2));
+}
+
+.home-skills {
+  background: #fbf9f5;
+}
+
+.home-contact {
+  background: #eee8df;
+}
+
+@media (max-width: 760px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    width: calc(100% - 2rem);
+    min-height: auto;
+    padding: 4rem 0 4.5rem;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(3.25rem, 12vw, 5rem);
+  }
+
+  .home-hero__visual {
+    width: min(100% - 1.5rem, 420px);
+    justify-self: center;
+    margin-right: 1rem;
+  }
+
+  .home-hero__meta {
+    margin-top: 2.5rem;
+  }
+
+  .home-intro-strip {
+    gap: 0.8rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+  }
+
+  .home-section {
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 
-@media (max-width: 768px) {
-  .w-64,
-  .h-64,
-  .w-80,
-  .h-80 {
-    width: 16rem;
-    height: 16rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .w-64,
-  .h-64,
-  .w-80,
-  .h-80 {
-    width: 14rem;
-    height: 14rem;
-  }
-}
-
-/* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Focus states for accessibility */
-button:focus-visible,
-a:focus-visible {
-  outline: 2px solid #ff4b57;
-  outline-offset: 2px;
-}
-
-/* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .home-button {
+    transition: none;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen py-20 relative overflow-hidden">
+  <div class="projects-page min-h-screen py-20 relative overflow-hidden">
     <!-- Animated Background -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div
@@ -347,6 +347,77 @@ const filteredImages = computed(() => {
 </script>
 
 <style scoped>
+.projects-page h1,
+.projects-page h3 {
+  color: #20231f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.projects-page h1 span,
+.projects-page .text-\[\#ff4b57\] {
+  color: #bf4a38;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.projects-page p,
+.projects-page .text-gray-300,
+.projects-page .text-gray-400 {
+  color: #716f67;
+}
+
+.projects-page .project-card {
+  border: 1px solid #e6e0d6;
+  border-radius: 0.9rem;
+  background: #fffdfa;
+  box-shadow: 0 8px 26px rgba(32, 35, 31, 0.05);
+}
+
+.projects-page .project-card:hover {
+  border-color: #d7b4a7;
+  box-shadow: 0 18px 34px rgba(32, 35, 31, 0.1);
+}
+
+.projects-page .project-card h3 {
+  color: #20231f;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.projects-page .project-card p {
+  color: #716f67;
+}
+
+.projects-page .project-card h3.text-white {
+  color: #20231f;
+}
+
+.projects-page .project-card .text-white:not(h3) {
+  color: #fffdfa;
+}
+
+.projects-page .bg-gradient-to-br.from-gray-900 {
+  background: #e8dfd3;
+}
+
+.projects-page .bg-gradient-to-r.from-white\/5,
+.projects-page .bg-white\/5 {
+  border-color: #ded8ce;
+  background: #f0ece4;
+  color: #716f67;
+}
+
+.projects-page .bg-gradient-to-r.from-white\/5 h3,
+.projects-page .bg-gradient-to-r.from-white\/5 p {
+  color: #20231f;
+}
+
+.projects-page .bg-gradient-to-r.from-\[\#ff4b57\] {
+  background-image: linear-gradient(110deg, #bf4a38, #d1745d);
+}
+
 .project-card {
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0 10px 30px rgba(255, 75, 87, 0.1);

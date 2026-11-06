@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="py-20 relative overflow-hidden">
+  <section id="projects" class="featured-work py-20 relative overflow-hidden">
     <!-- Animated background gradient -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div
@@ -306,6 +306,62 @@ const images = ref([
 </script>
 
 <style scoped>
+.featured-work h1 {
+  color: #20231f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.featured-work h1 span,
+.featured-work .text-\[\#ff4b57\] {
+  color: #bf4a38;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.featured-work p {
+  color: #716f67;
+}
+
+.featured-work .project-card {
+  overflow: hidden;
+  border: 1px solid #e6e0d6;
+  border-radius: 0.9rem;
+  background: #fffdfa;
+  box-shadow: 0 8px 26px rgba(32, 35, 31, 0.05);
+}
+
+.featured-work .project-card:hover {
+  box-shadow: 0 18px 34px rgba(32, 35, 31, 0.1);
+}
+
+.featured-work .project-card h3 {
+  color: #20231f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.featured-work .project-card p {
+  color: #716f67;
+}
+
+.featured-work .bg-gradient-to-br.from-gray-900 {
+  background: #ece7de;
+}
+
+.featured-work .bg-gradient-to-r.from-\[\#ff4b57\] {
+  background-image: linear-gradient(110deg, #bf4a38, #d1745d);
+}
+
+.featured-work button:not([class*="bg-gradient"]) {
+  border-color: #ded8ce;
+  background: #fffdfa;
+  color: #716f67;
+}
+
 .project-card {
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0 10px 30px rgba(255, 75, 87, 0.1);

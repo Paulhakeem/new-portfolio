@@ -1,71 +1,98 @@
 ﻿@import "tailwindcss";
 @import "tw-animate-css";
 
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 25);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.923 0 0);
-  --input: oklch(0.923 0 0);
-  --ring: oklch(0.556 0 0);
-  --radius: 0.5rem;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.205 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.205 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.205 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.577 0.245 25);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.205 0 0);
-  --input: oklch(0.205 0 0);
-  --ring: oklch(0.556 0 0);
+:root {
+  color-scheme: light;
+  --background: #f6f3ed;
+  --foreground: #20231f;
+  --card: #fffdfa;
+  --card-foreground: #20231f;
+  --popover: #fffdfa;
+  --popover-foreground: #20231f;
+  --primary: #bf4a38;
+  --primary-foreground: #fffdfa;
+  --secondary: #ece7de;
+  --secondary-foreground: #20231f;
+  --muted: #ece7de;
+  --muted-foreground: #6e6b64;
+  --accent: #f2e7dc;
+  --accent-foreground: #20231f;
+  --destructive: #b42318;
+  --destructive-foreground: #fffdfa;
+  --border: #ded8ce;
+  --input: #ded8ce;
+  --ring: #bf4a38;
+  --radius: 0.75rem;
+  --paper: #f6f3ed;
+  --ink: #20231f;
+  --muted-ink: #716f67;
+  --accent-ink: #bf4a38;
+  --line: #ded8ce;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    background: var(--paper);
+  }
+
   body {
-    background-color: var(--background);
-    color: var(--foreground);
-    font-family: "Inter", sans-serif;
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", "Avenir Next", sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
-  .card {
-    background-color: var(--card);
-    color: var(--card-foreground);
-    border-radius: var(--radius);
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  button,
+  input,
+  textarea {
+    font: inherit;
   }
 
-  .popover {
-    background-color: var(--popover);
-    color: var(--popover-foreground);
-    border-radius: var(--radius);
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  a {
+    color: inherit;
+  }
+
+  ::selection {
+    color: white;
+    background: #bf4a38;
+  }
+}
+
+.site-shell {
+  min-height: 100vh;
+  overflow: clip;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem max(1.5rem, calc((100vw - 1200px) / 2));
+  border-top: 1px solid var(--line);
+  color: var(--muted-ink);
+  font-size: 0.8rem;
+}
+
+.site-footer__brand {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-footer > a:last-child {
+  color: var(--accent-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    flex-wrap: wrap;
+    padding: 1.25rem 1rem;
   }
 }

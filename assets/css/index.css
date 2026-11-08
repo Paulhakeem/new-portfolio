@@ -33,6 +33,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
     background: var(--paper);
   }
 
@@ -89,8 +90,18 @@
 }
 
 @media (max-width: 640px) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+
   .site-footer {
     flex-wrap: wrap;
     padding: 1.25rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

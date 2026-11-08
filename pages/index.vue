@@ -49,7 +49,7 @@
     </section>
 
     <section class="home-intro-strip" aria-label="About my work">
-      <span>Web development</span><i></i><span>Graphic design</span><i></i><span>Social media marketing</span>
+      <span>Web development</span><i></i><span>Graphic design</span><i></i><span>Social media marketing</span><i></i><span>Computer Maintainance</span><i></i><span>Sales</span>
     </section>
 
     <section class="home-section home-skills" aria-labelledby="expertise-heading">

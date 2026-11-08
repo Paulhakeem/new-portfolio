@@ -261,12 +261,12 @@ const images = ref([
     link: "https://medusa-sooty-nine.vercel.app/",
   },
   {
-    title: "Dashboard",
+    title: "HR Management System",
     src: "/images/5.png",
-    alt: "Dashboard",
+    alt: "HR Management System",
     description:
-      "Comprehensive analytics dashboard with data visualization and real-time updates.",
-    link: "https://dashboard-sooty-zeta-83.vercel.app/",
+      "Lindaworker is a HR management dashboard that streamlines employee data, performance tracking, and reporting for efficient workforce management.",
+    link: "https://lindaworker.codewithpaul.dev",
   },
   {
     title: "Movie app",

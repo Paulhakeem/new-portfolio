@@ -2,7 +2,7 @@
   <header class="site-header">
     <div class="site-header__inner">
       <NuxtLink to="/" class="site-brand" aria-label="Paul Nyamawi home">
-        <span class="site-brand__mark">P.</span>
+        <span class="site-brand__mark">PN</span>
         <span class="site-brand__name">Paul Nyamawi</span>
       </NuxtLink>
 

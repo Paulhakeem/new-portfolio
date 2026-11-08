@@ -15,102 +15,20 @@
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
-      <div class="text-center mb-16 animate-fade-in">
-        <div class="inline-block mb-6">
-          <span
-            class="px-4 py-2 text-sm font-semibold text-[#ff4b57] bg-[#ff4b57]/10 rounded-full border border-[#ff4b57]/20"
-          >
-            🚀 Portfolio Showcase
-          </span>
-        </div>
-
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-          My
+      <div class="mb-10 animate-fade-in">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-3">
           <span
             class="bg-gradient-to-r from-[#ff4b57] via-pink-400 to-[#ff6b77] bg-clip-text text-transparent"
           >
             Projects
           </span>
         </h1>
-
-        <p
-          class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
-        >
-          A curated collection of my most impactful digital creations,
-          showcasing innovation, design excellence, and technical expertise.
-        </p>
-
-        <!-- Stats -->
-        <div class="flex justify-center gap-8 mt-10">
-          <div class="text-center">
-            <div class="text-3xl font-bold text-[#ff4b57]">
-              {{ images.length }}
-            </div>
-            <div class="text-gray-400 text-sm">Projects</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-pink-400">12+</div>
-            <div class="text-gray-400 text-sm">Technologies</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-purple-400">100%</div>
-            <div class="text-gray-400 text-sm">Passion</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Filter Buttons -->
-      <div class="flex flex-wrap justify-center gap-4 mb-12">
-        <button
-          @click="activeFilter = 'all'"
-          :class="[
-            'px-6 py-3 rounded-full font-semibold transition-all duration-300',
-            activeFilter === 'all'
-              ? 'bg-gradient-to-r from-[#ff4b57] to-pink-400 text-white shadow-lg shadow-[#ff4b57]/50'
-              : 'bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 hover:border-[#ff4b57]/30',
-          ]"
-        >
-          All Projects
-        </button>
-        <button
-          @click="activeFilter = 'web'"
-          :class="[
-            'px-6 py-3 rounded-full font-semibold transition-all duration-300',
-            activeFilter === 'web'
-              ? 'bg-gradient-to-r from-[#ff4b57] to-pink-400 text-white shadow-lg shadow-[#ff4b57]/50'
-              : 'bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 hover:border-[#ff4b57]/30',
-          ]"
-        >
-          Web Apps
-        </button>
-        <button
-          @click="activeFilter = 'ui'"
-          :class="[
-            'px-6 py-3 rounded-full font-semibold transition-all duration-300',
-            activeFilter === 'ui'
-              ? 'bg-gradient-to-r from-[#ff4b57] to-pink-400 text-white shadow-lg shadow-[#ff4b57]/50'
-              : 'bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 hover:border-[#ff4b57]/30',
-          ]"
-        >
-          UI/UX
-        </button>
-        <button
-          @click="activeFilter = 'featured'"
-          :class="[
-            'px-6 py-3 rounded-full font-semibold transition-all duration-300',
-            activeFilter === 'featured'
-              ? 'bg-gradient-to-r from-[#ff4b57] to-pink-400 text-white shadow-lg shadow-[#ff4b57]/50'
-              : 'bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 hover:border-[#ff4b57]/30',
-          ]"
-        >
-          Featured
-        </button>
       </div>
 
       <!-- Projects Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
-          v-for="(image, index) in filteredImages"
+          v-for="(image, index) in images"
           :key="index"
           class="project-card group relative rounded-2xl overflow-hidden bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-[#ff4b57]/50 transition-all duration-500 flex flex-col h-full"
           :style="{ animationDelay: `${index * 0.1}s` }"
@@ -217,7 +135,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref } from "vue";
 
 const config = useRuntimeConfig();
 const siteUrl = config.public.siteUrl;
@@ -247,8 +165,6 @@ definePageMeta({
   title: "Projects | Paul Nyamawi",
 });
 
-const activeFilter = ref("all");
-
 const images = ref([
   {
     title: "Skywork Website",
@@ -271,14 +187,13 @@ const images = ref([
     link: "https://medusa-sooty-nine.vercel.app/",
   },
   {
-    title: "Dashboard",
+    title: "HR Management System",
     src: "/images/5.png",
-    alt: "Dashboard",
+    alt: "HR Management System",
     description:
-      "Comprehensive analytics dashboard with data visualization and real-time updates.",
-    category: "Dashboard",
+      "Lindaworker is a HR management dashboard that streamlines employee data, performance tracking, and reporting for efficient workforce management.",
     featured: false,
-    link: "https://dashboard-sooty-zeta-83.vercel.app/",
+    link: "https://lindaworker.codewithpaul.dev",
   },
   {
     title: "Movie app",
@@ -318,7 +233,7 @@ const images = ref([
       "Seamless event booking platform with calendar integration and payment processing.",
     category: "Booking",
     featured: false,
-    link: "https://velora.codewithpaul.dev",
+    link: "https://www.happitwineventslimited.co.ke",
   },
   {
     title: "Precious Hope For Children",
@@ -332,18 +247,6 @@ const images = ref([
   },
 ]);
 
-const filteredImages = computed(() => {
-  if (activeFilter.value === "all") return images.value;
-  if (activeFilter.value === "featured")
-    return images.value.filter((img) => img.featured);
-  if (activeFilter.value === "web")
-    return images.value.filter(
-      (img) => img.category === "Web App" || img.category === "E-commerce",
-    );
-  if (activeFilter.value === "ui")
-    return images.value.filter((img) => img.category !== "Dashboard");
-  return images.value;
-});
 </script>
 
 <style scoped>
